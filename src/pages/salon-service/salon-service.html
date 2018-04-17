@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle icon-only class="button-logo">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>MY SERVICES</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content-about">
+<div class="responsive-rectangle">
+  <div class="image-wrapper">
+    <img src="http://18.220.97.146/barber/app_link/img/shutterstock_268415039.jpg" alt="">
+  </div>
+</div>
+ <div class="inside-item-top"> SERVICES
+ <span class="pull-right" (click)="showPrompt()">ADD MORE +</span>
+ </div>
+
+<div *ngIf="value=='false'" >
+    <div class="item-data"  *ngFor="let item of items;let i=index">
+        <div class="inside-item"> {{ item.salon_service }}
+            <span class="pull-right" (click)="delete(item.id,item.salon_id)"> <ion-icon name="trash"></ion-icon></span>
+            <span class="pull-right">${{item.charge}}</span>
+        </div>
+    </div>
+</div>
+<div *ngIf="value=='true'">
+<div class="img-item"> <img src="http://18.220.97.146/barber/app_link/icon/shopping-basket.png" class="item-img"></div>
+  <div class="item-null">Service List is Empty.</div>
+</div>
+
+</ion-content>
+

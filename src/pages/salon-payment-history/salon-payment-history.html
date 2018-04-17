@@ -1,0 +1,38 @@
+<!--
+  Generated template for the CustomerPaymentHistoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button menuToggle icon-only class="button-logo">
+         <ion-icon name='menu'></ion-icon>
+      </button>
+    <ion-title>Order history</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content-history all">
+<ion-card *ngFor="let a of history">
+  <ion-card-header>
+    <span class="pull-left all">Order no. {{a.bookingid}}</span>
+    <span class="pull-right all" style="color: #222;font-size: 13px">{{a.date_of_payment | date: 'dd'}}/{{a.date_of_payment | date:'MM'}}/{{a.date_of_payment | date: 'yyyy'}}</span>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="all">{{a.customer.fullname}}</div>
+  <div class="all"><a>{{a.customer.email}}</a></div>
+  <div>Transaction id:{{a.balance_transaction}}</div>
+   Your Service of <b>{{a.service}}</b>. <span class="pull-right all"> 
+   <!-- <b>${{total(a.receiverList_receiver0_amount,a.receiverList_receiver1_amount)}}</b> -->
+   <b>${{a.amount}}</b>
+</span>
+<div  class="all" style="color: #222" *ngIf="a.stripe_payment_status==1">Your order is <b style="color: #5BC250">successful</b></div>
+<div  class="all" style="color: #222" *ngIf="a.stripe_payment_status==0">Your order is <b style="color: #c72228">failed</b></div>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

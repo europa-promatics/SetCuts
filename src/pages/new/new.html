@@ -1,0 +1,184 @@
+<!--
+  Generated template for the NewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+ <!--  <button ion-button icon-only class="button-logo" (click)="dismiss()">
+         <ion-icon name='close'></ion-icon>
+      </button> -->
+    <ion-title>{{date}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content-view">
+ <ion-spinner name="ios" color="redcolor" *ngIf="!barberscheduler" ></ion-spinner>
+<!-- <div class="text"> Appointments For {{date}}</div> -->
+
+
+	
+	<div class="rWrap">
+		<div class="lTable" *ngIf="barberscheduler">
+			<div class="rTableHead"><strong>Time</strong></div>
+			<div class="rTableCell" *ngFor="let p of table">{{p.time}}</div>
+		</div>
+
+
+		<div class="r-div">
+			<div class="rTable">
+				<div class="rTableRow"  *ngFor="let a of barberscheduler">
+					<div class="rTableHead"><strong> {{a.fullname}} </strong>
+						</div>
+					<div class="rTableCell" *ngFor="let p of table" (click)="onTime(p.time,a.fullname,a.id)">
+					<!-- <div class="rTableCell" *ngFor="let p of table"> -->
+
+					<!-- <div class="rTableCell" *ngFor="let p of table" > -->
+					
+						<span>{{banadobhai(a.booking_informations,p.time,a.custom_user)}}</span>
+					<br>
+					<span>{{banadobhai2(a.booking_informations,p.time,a.custom_user)}}</span> 
+				
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<ion-list *ngIf="selectservice=='true'">
+  <ion-item>
+    <ion-label>Select Service</ion-label>
+    <ion-select [(ngModel)]="gaming" #select (ionChange)="notify()">
+       <div *ngFor="let item of items">  
+      <ion-option [value]="item.salon_service" >{{item.salon_service}}</ion-option>
+    </div>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+	<!-- <div class="lTable">
+		<div class="rTableHead"><strong>Time</strong></div>
+		<div class="rTableCell" *ngFor="let p of table">{{p.time}} </div>
+	</div>
+	
+	<div class="rTable">
+		<div class="rTableRow">
+			<div class="rTableHead" *ngFor="let a of barberscheduler"><strong>{{a.barbername}}</strong>
+				<div class="rTableCell" *ngFor="let p of table">{{banadobhai(a.bookedtime.time,p.time)}}
+				</div>
+			</div>
+		</div>
+	</div> -->
+	
+
+
+		<!-- <div class="full-div">
+<div class="rTable">
+				 <div class="rTableRow">
+				 <div class="rTableHead"><strong>Time</strong></div>
+				 <div class="rTableHead"><span style="font-weight: bold;">SAM</span></div>
+				 <div class="rTableHead"><strong>TOM</strong></div>
+				 <div class="rTableHead"><strong>HERRY</strong></div>
+				 <div class="rTableHead"><strong>JERRY</strong></div>
+				 </div>
+				 <div class="rTableRow">
+				 <div class="rTableCell">9.00 am</div>
+				 <div class="rTableCell"><a href="tel:0123456785">customer name</a></div>
+				 <div class="rTableCell">customer name</div>
+				 <div class="rTableCell"></div>
+				 <div class="rTableCell">customer name</div>
+				 </div>
+				 <div class="rTableRow">
+				 <div class="rTableCell">10.00 am</div>
+				 <div class="rTableCell"><a href="tel:9876532432"></a></div>
+				 <div class="rTableCell"></div>
+				 <div class="rTableCell">customer name</div>
+				 <div class="rTableCell"></div>
+				 </div>
+				<div class="rTableRow">
+				 <div class="rTableCell">11.00 am</div>
+				 <div class="rTableCell"><a href="tel:9876532432">customer name</a></div>
+				 <div class="rTableCell"></div>
+				 <div class="rTableCell"></div>
+				 <div class="rTableCell"></div>
+				 </div>
+				<div class="rTableRow">
+				 <div class="rTableCell">12.00 pm</div>
+				 <div class="rTableCell"><a href="tel:9876532432">customer name</a></div>
+				 <div class="rTableCell"></div>
+				 <div class="rTableCell"><img src="images/check.gif" alt="checked" /></div>
+				 <div class="rTableCell">customer name</div>
+				 </div>
+				<div class="rTableRow">
+				 <div class="rTableCell">01.00 pm</div>
+				 <div class="rTableCell"><a href="tel:9876532432"></a></div>
+				 <div class="rTableCell">customer name</div>
+				 <div class="rTableCell">customer name</div>
+				 <div class="rTableCell"></div>
+				 </div>
+				<div class="rTableRow">
+				 <div class="rTableCell">02.00 pm</div>
+				 <div class="rTableCell"><a href="tel:9876532432">customer name</a></div>
+				 <div class="rTableCell"></div>
+				 <div class="rTableCell"></div>
+				 <div class="rTableCell"></div>
+				 </div>
+				<div class="rTableRow">
+				 <div class="rTableCell">03.00 pm</div>
+				 <div class="rTableCell"><a href="tel:9876532432"></a></div>
+				 <div class="rTableCell"></div>
+				 <div class="rTableCell">customer name</div>
+				 <div class="rTableCell"></div>
+				 </div>
+				 <div class="rTableRow">
+				 <div class="rTableCell">04.00 pm</div>
+				 <div class="rTableCell"><a href="tel:9876532432">customer name</a></div>
+				 <div class="rTableCell"><img src="images/check.gif" alt="checked" /></div>
+				 <div class="rTableCell">customer name</div>
+				 <div class="rTableCell">customer name</div>
+				 </div>
+				 <div class="rTableRow">
+				 <div class="rTableCell">05.00 pm</div>
+				 <div class="rTableCell"><a href="tel:9876532432"></a></div>
+				 <div class="rTableCell"></div>
+				 <div class="rTableCell"></div>
+				 <div class="rTableCell"></div>
+				 </div>
+			</div>
+		</div>  -->
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

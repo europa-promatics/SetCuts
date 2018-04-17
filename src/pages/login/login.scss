@@ -1,0 +1,211 @@
+.toolbar-title-md {
+    background: #2b2b2b none repeat scroll 0 0;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    width: 80%;
+       font-family: 'OpenSans-Regular';
+}
+page-login {
+        .parent {
+    background: transparent none repeat scroll 0 0;
+    display: table;
+    height: 100px;
+    margin: 0px auto;
+    width: 100px;
+}
+
+.middle         {display: table-cell; 
+                vertical-align: middle;}
+
+.circle {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 100%;
+  height: 150px;
+  margin: auto;
+  text-align: center;
+  width: 150px;
+}
+.img-logo {
+  margin-top: 26%;
+  max-width: 100%;
+  width: 100%;
+}
+
+.list-ios .item-block .item-inner {
+    border-bottom: 0.55px solid #d5d5d5;
+}
+.text-input-ios {
+    margin: 11px 8px 6px 5px;
+    padding: 0;
+    width: calc(100% - 8px);
+}
+.login{
+	background: #fff;
+}
+.toolbar-background {
+    background: #2B2B2B;
+}
+.ion-ios-arrow-back::before {
+  color: #fff;
+  content: "";
+  padding-left: 4px;
+}
+.back-button-text-ios {
+    color: #2b2b2b;
+    letter-spacing: -0.01em;
+}
+
+
+
+.toolbar-title-ios {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 500;
+    pointer-events: auto;
+       font-family: 'OpenSans-Regular';
+    text-align: center;
+}
+.ion-ios-menu::before {
+    color: #fff;
+    content: "";
+}
+.ion-md-arrow-back::before {
+    color: #fff;
+    content: "";
+}
+.ion-md-menu::before {
+    color: #fff;
+    content: "";
+}
+.back-button.show-back-button {
+    color: #fff;
+    display: inline-block;
+}
+.img-logo-login {
+    margin-top: 30%;
+    max-width: 56%;
+    width: 100%;
+}
+.img-tag-div-login {
+    background: #a7a7a7 none repeat scroll 0 0;
+    border-radius: 100%;
+    height: 135px;
+    margin-left: 25%;
+    margin-top: 0;
+    max-width: 50%;
+      margin-bottom: 7%;
+    text-align: center;
+    width: 100%;
+}
+.btn-login{
+    background-color: #c72228;
+    color: #fff;
+    margin: 18px auto;
+    width: 90%;
+}
+.input-div {
+    margin-bottom: 16px;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.checkbox {
+    display: ruby-base-container;
+    float: left;
+    margin-bottom: 0;
+    margin-top: 0;
+    position: relative;
+}
+.item-input {
+    background-color: #fff;
+    color: #000;
+    border:1px solid #d5d5d5;
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-top: 6%;
+    padding-left: 0px;
+    padding-right: 0;
+    position: relative;
+    text-transform: none;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+} 
+.list-md .item-input.input-has-focus:last-child {
+  border-bottom-color: #d5d5d5;
+  box-shadow: 0 -1px 0 0 #fff inset;
+}
+.list-md .item-input.ng-valid.input-has-value:last-child:not(.input-has-focus) {
+    border-bottom-color: transparent;
+    box-shadow: 0 -1px 0 0 transparent inset;
+}
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: #d5d5d5;
+    box-shadow: 0 -1px 0 0 transparent inset;
+}
+.item-ios {
+    border-radius: 0;
+    color: #000;
+    font-size: 1.7rem;
+    padding-left: 0;
+    position: relative;
+    transition: background-color 200ms linear 0s;
+}
+.privacy-policy{
+	background: #222;
+	
+}
+.item.item-md .checkbox-md {
+    display: block;
+    margin: 4px 0 5px -17px;
+    position: static;
+}
+.anchor-terms{
+	color: #C72228;
+    font-family: 'OpenSans-Regular';
+    font-size: 13px;
+}
+.forget-btn {
+    color: #c72228;
+    text-align: center;
+    font-size: 13px;
+    font-family: 'OpenSans-Regular';
+    width: 100%;
+}
+.or-line::before {
+    background-color: #222;
+    color: #fff;
+    content: "OR";
+    height: 20px;
+    left: 45%;
+    position: absolute;
+    text-align: center;
+    top: -10px;
+    width: 34px;
+
+}
+.or-line {
+    background: #949292 none repeat scroll 0 0;
+    height: 1px;
+    margin-top: 10%;
+    position: relative;
+     margin-bottom: 8%;
+    width: 100%;
+}
+.div-sign {
+    color: #000;
+    font-size: 13px;
+    text-align: center;
+     font-family: 'OpenSans-Regular';
+}
+.item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: transparent!important;
+  box-shadow: none !important;
+}
+.check{
+    color: #000;
+    margin-left: 4px;
+    font-size: 13px;
+    font-family: 'OpenSans-Regular';
+}
+}

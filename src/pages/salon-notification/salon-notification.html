@@ -1,0 +1,42 @@
+<!--
+  Generated template for the SalonNotificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>NOTIFICATIONS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="contact-content">
+<!--  <ion-spinner name="ios" color="redcolor" *ngIf="!appointment" ></ion-spinner -->
+ <div *ngIf="count==0" class="div-img">
+ <img src="http://18.220.97.146/barber/app_link/icon/disable-alarm.png" class="img-div">
+ <div class="text-img">No New Notification</div>
+ </div>
+<div  *ngFor="let p of appointment">
+<div class="user-review user{{p.status}}"  *ngIf="p.status==0">
+
+    			<div class="inside-user " > <img src="http://18.220.97.146/barber/img/customerprofileimage/{{p.customerimage}}" class="img-logo"  *ngIf="p.customerimage!=null"/>
+          <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" class="img-logo"  *ngIf="p.customerimage==null"/> </div>
+    			<div class="name"  (click)="salon_view_User_profile(p.customer_id)"><b><a>{{p.customername}}</a></b> </div>
+    			<div class="name-service">{{p.service}}</div>
+    			<div class="diff">
+    				<div class="name-service">
+    					{{p.date}} at {{p.time}}
+    				</div>
+            <div><button class="btn-a-d" ion-button small (click)="confirm(p.bookingid)">ACCEPT</button>
+            <button class="btn-a-d" ion-button small (click)="decline(p.bookingid)">DECLINE</button></div>
+    			</div>
+
+    		<!-- 	<div class="pull-right">
+    				<button ion-button small color="redcolor">cancel</button>
+    			</div> -->
+    			</div>
+          </div>
+</ion-content>

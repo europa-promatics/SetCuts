@@ -1,0 +1,134 @@
+
+
+<style type="text/css">
+
+   .div-user-img {
+   background: #fff none repeat scroll 0 0;
+   height: 130px;
+   width: 100%;
+   }
+   .parent {
+   background: transparent none repeat scroll 0 0;
+   float: left;
+   margin-top: 36px;
+   position: absolute;;
+   width: 100%;
+   margin-left: 6%;
+   }
+   .middle{
+   display: table-cell; 
+   vertical-align: middle;
+   }
+   .circle {
+   display: inline-block;
+   height: 60px;
+   margin-right: 5%;
+   max-width: 60px;
+   text-align: left;
+   width: 100%;
+   }
+ .img-logo[_ngcontent-c0] {
+    border-radius: 100%;
+    display: inline-block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+   .color_white{
+   color: #000;
+   text-transform: capitalize;
+   }
+   .content-app{
+   background: #222;
+   }
+   
+</style>
+<ion-menu  id="myMenu" [content]="content">
+   <ion-content class="content-app">
+     <div *ngIf="usertype==0">
+         <div class="div-user-img menu-item" (click)="edit_page()"  menuClose>
+         	  <div class="parent">
+         	    <div class="circle">
+                    <img src="assets/img/team-member2.jpg" class="img-logo" *ngIf="img=='null'"> 
+                    <img src="{{img}}" class="img-logo"*ngIf="img!='null'">
+                 </div>
+                 <span class="color_white" *ngIf="auth=='true'"> {{name}}</span>
+         	</div>
+         </div>
+          <button class="menu-items" menuClose no-lines ion-item  (click)="login()" color="dark" *ngIf="auth!='true'">
+                 
+         
+                  <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">LOGIN</h2> 
+               </button>
+          <button class="menu-items" menuClose no-lines ion-item *ngFor="let p of pages" (click)="openPage(p)" color="dark">
+                 
+         
+                  <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">{{p.title}}</h2> 
+               </button>
+                <button class="menu-items" menuClose no-lines ion-item  color="dark" (click)="share()">
+                 
+         
+                  <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">SHARE</h2> 
+               </button>
+                <button class="menu-items" menuClose no-lines ion-item  (click)="logout()" color="dark" *ngIf="auth=='true'">
+                 
+         
+                  <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">LOGOUT</h2> 
+               </button>
+               </div>
+      <!-- For Salon Sidemenu -->
+      <div *ngIf="usertype==1">
+         <div class="div-user-img menu-item" (click)="edit_Profile_Salon()"  menuClose>
+            <div class="parent">
+               <div class="circle">
+                   <img src="assets/img/team-member2.jpg" class="img-logo" *ngIf="img=='null'"> 
+                    <img src="{{img}}" class="img-logo" *ngIf="img!='null'">
+               </div>
+               <span class="color_white"  *ngIf="auth=='true'"> {{name}} </span>
+            </div>
+         </div>
+           <button class="menu-items" menuClose no-lines ion-item  (click)="login()" color="dark" *ngIf="auth!='true'">
+                 
+         
+                  <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">LOGIN</h2> 
+               </button>
+         <button class="menu-items" menuClose no-lines ion-item *ngFor="let p of salon" (click)="salonPage(p)" color="dark">
+         <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">{{p.title}}</h2>
+         </button>
+         <button class="menu-items" menuClose no-lines ion-item   color="dark" (click)="share()">
+            <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">SHARE</h2>
+         </button>
+         <button class="menu-items" menuClose no-lines ion-item  (click)="logout()" color="dark"  *ngIf="auth=='true'">
+            <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">LOG OUT</h2>
+         </button>
+      </div>
+
+       <div *ngIf="usertype==2">
+         <div class="div-user-img menu-item" (click)="edit_Profile_barber()"  menuClose>
+            <div class="parent">
+               <div class="circle">
+                   <img src="assets/img/team-member2.jpg" class="img-logo" *ngIf="img=='null'"> 
+                    <img src="{{img}}" class="img-logo" *ngIf="img!='null'">
+               </div>
+               <span class="color_white"  *ngIf="auth=='true'"> {{name}} </span>
+            </div>
+         </div>
+           <button class="menu-items" menuClose no-lines ion-item  (click)="login()" color="dark" *ngIf="auth!='true'">
+                 
+         
+                  <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">LOGIN</h2> 
+               </button>
+         <button class="menu-items" menuClose no-lines ion-item *ngFor="let p of barber" (click)="salonPage(p)" color="dark">
+         <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">{{p.title}}</h2>
+         </button>
+         <button class="menu-items" menuClose no-lines ion-item   color="dark" (click)="share()">
+            <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">SHARE</h2>
+         </button>
+         <button class="menu-items" menuClose no-lines ion-item  (click)="logout()" color="dark"  *ngIf="auth=='true'">
+            <h2 style="width: 100%;float: left; text-align:left; font-family: 'OpenSans-Regular';">LOG OUT</h2>
+         </button>
+      </div>
+   </ion-content>
+</ion-menu>
+<ion-nav id="nav" #content [root]="rootPage" swipeBackEnabled="false" ></ion-nav>
+

@@ -1,0 +1,75 @@
+<!--
+  Generated template for the PickTimeUserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+<!-- <button ion-button (click)="home()"  class="button-home">
+                <ion-icon name="home"></ion-icon>
+            </button> -->
+            <ion-title>Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<!-- <ion-content class="date-content" style="background-image: url('assets/img/timeslot-page.png');margin-top:26px;" > -->
+<ion-content padding class="date-content" >
+
+<div class="full-div">
+<div class="inside-div">
+  <div class="right-image" ><img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" *ngIf="!barber_image"  class="img-head">
+  <img src="http://18.220.97.146/barber/img/barberimage/{{barber_image}}" *ngIf="barber_image" class="img-head"></div></div>
+  </div>
+<!--   <div class="full-data">
+        <div class="salon-name" >{{barber_name}} barber</div>
+    <div class="salon-address">{{address}}</div>
+  </div>
+  </div>
+
+
+      <div class="card1">
+      <div class="item-style">{{book_service}} </div>
+        <span class="pull-left">{{date}},{{timeStarts}}</span>
+        <span class="pull-right"> <b>${{book_charges}} </b></span>
+      </div> -->
+        <div class="purchase"><b>Confirmation</b></div>
+      <div class="full-data">
+
+       <!-- <div class="text-data">
+        <span class="pull-left cap"><b>Shop name:</b></span>
+        <span class="pull-right">{{salonname}} </span>
+        </div> -->
+        
+        <div class="text-data">
+        <span class="pull-left cap"><b>Barber's name:</b></span>
+        <span class="pull-right">{{barber_name}} </span>
+        </div>
+
+        <div class="text-data">
+        <span class="pull-left"><b>Style:</b></span>
+        <span class="pull-right">{{book_service}} </span>
+        </div>
+
+         <div class="text-data">
+        <span class="pull-left"><b>Cost:</b></span>
+        <span class="pull-right">${{book_charges}} </span>
+        </div>
+
+         <div class="text-data">
+        <span class="pull-left"><b>Booking Address:</b></span>
+        <span class="pull-right">{{address}} </span>
+        </div>
+
+        <div class="text-data">
+        <span class="pull-left"><b>Date & Time:</b></span>
+        <span class="pull-right">{{date}} at {{timeStarts}} </span>
+        </div>
+      </div>
+      <button ion-button block color="redcolor" (click)="PickbookingDate()">Confirm</button>
+<!--       <button ion-button block (click)="payment_service()">tap</button> -->
+
+</ion-content>

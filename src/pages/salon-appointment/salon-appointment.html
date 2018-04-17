@@ -1,0 +1,165 @@
+<!--
+  Generated template for the UserAppointmentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button menuToggle icon-only class="button-logo">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>OUR CUSTOMER</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+  <ion-segment [(ngModel)]="Appointments">
+    <ion-segment-button value="UPCOMING">
+      UPCOMING
+    </ion-segment-button>
+    <ion-segment-button value="PAST">
+      PAST
+    </ion-segment-button>
+     <ion-segment-button value="CANCELLED">
+      CANCELLED
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+<div [ngSwitch]="Appointments">
+<div *ngSwitchCase="'UPCOMING'" >
+ <div *ngIf="currentAppointment=='' && upcomingAppointment==''" class="div-img">
+ <img src="http://18.220.97.146/barber/app_link/icon/indifferent.png" class="img-div">
+ <div class="text-img"><b>No upcoming appointment</b></div>
+ </div>
+<div *ngIf="currentAppointment!=''">
+<div class="user-review"  *ngFor="let c of currentAppointment" >
+
+                <div class="inside-user"> 
+                <img [src]='getSafeUrl(c.customer_image)'  *ngIf="c.customer_image!=null" />
+                <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" *ngIf="c.customer_image==null"> </div>
+                <div class="name">{{c.customer_name}} </div>
+                <div class="name"><b>Barber name:</b>{{c.barber_name}}</div>
+                <div class="name">{{c.customer_address}}</div>
+                <div class="diff">
+                    <div *ngIf="c.customer_service">
+                        {{c.customer_service}}
+                         <span class="text-price" *ngIf="c.charge!=null">  ${{c.charge}}</span>
+               <span class="text-price" *ngIf="c.charge==null">  $30</span>
+                    </div>
+                    <div>
+                        {{c.date}} at {{c.time}}
+                    </div>
+                    <!--  <div *ngIf="c.service_complete_status==0">
+                        <span><button ion-button small color="redcolor" (click)="Complete_service(c.booking_id)">Confirm</button></span>
+                        <span><button ion-button small color="redcolor" (click)="cancel(c.booking_id)">Cancel</button></span>
+                    </div> -->
+                </div>
+    
+                </div>
+                </div>
+<div *ngIf="upcomingAppointment!=''">
+<div class="user-review"  *ngFor="let p of upcomingAppointment" >
+
+    			<div class="inside-user"> 
+                <img [src]='getSafeUrl(p.customer_image)'  *ngIf="p.customer_image!=null"/>
+      <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" *ngIf="p.customer_image==null"> 
+                 </div>
+    			<div class="name">{{p.customer_name}} </div>
+                <div class="name"><b>Barber name:</b>{{p.barber_name}}</div>
+    			<div class="name">{{p.customer_address}}</div>
+    			<div class="diff">
+    				<div *ngIf="p.customer_service">
+    					{{p.customer_service}}
+               <span class="text-price" *ngIf="p.charge!=null">  ${{p.charge}}</span>
+               <span class="text-price" *ngIf="p.charge==null">  $30</span>
+    				</div>
+    				<div>
+    					{{p.date}} at {{p.time}}
+    				</div>
+            <!--  <div  *ngIf="p.service_complete_status==0">
+                        <span><button ion-button small color="redcolor" (click)="Complete_service(p.booking_id)">Confirm</button></span>
+                        <span><button ion-button small color="redcolor" (click)="cancel(p.booking_id)">Cancel</button></span>
+                    </div> -->
+    			</div>
+   
+    			</div>
+                </div>
+    			</div>
+    		</div>
+
+<div [ngSwitch]="Appointments">
+<div *ngSwitchCase="'PAST'" >
+ <div *ngIf="pastAppointment==''" class="div-img">
+ <img src="http://18.220.97.146/barber/app_link/icon/indifferent.png" class="img-div">
+ <div class="text-img"><b>No past appointment</b></div>
+ </div>
+<div *ngIf="pastAppointment!=''">
+<div class="user-review"  *ngFor="let p of pastAppointment" >
+
+    			<div class="inside-user">
+                 <img [src]='getSafeUrl(p.customer_image)' *ngIf="p.customer_image!=null"/>
+                 <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" *ngIf="p.customer_image==null">  </div>
+    			<div class="name">{{p.customer_name}} </div>
+                <div class="name"><b>Barber name:</b>{{p.barber_name}}</div>
+    			<div class="name">{{p.customer_address}}</div>
+    			<div class="diff">
+    				<div *ngIf="p.customer_service">
+    				  {{p.customer_service}}
+              <span class="text-price" *ngIf="p.charge!=null">  ${{p.charge}}</span>
+               <span class="text-price" *ngIf="p.charge==null">  $30</span>
+    				</div>
+    				<div>
+    					{{p.date}} at {{p.time}}
+    				</div>
+             <div  *ngIf="p.service_complete_status==0">
+                        <span><button ion-button small color="redcolor" (click)="Complete_service(p.booking_id)">Confirm</button></span>
+                        <span><button ion-button small color="redcolor" (click)="cancel(p.booking_id)">Cancel</button></span>
+                    </div>
+    			</div>
+    			
+    			</div>
+                </div>
+    			</div>
+    		</div>
+
+
+<div [ngSwitch]="Appointments">
+<div *ngSwitchCase="'CANCELLED'" >
+<div *ngIf="cancelAppointment==''" class="div-img">
+ <img src="http://18.220.97.146/barber/app_link/icon/indifferent.png" class="img-div">
+ <div class="text-img"><b>No cancel appointment</b></div>
+ </div>
+<div *ngIf="cancelAppointment!=''">
+<div class="user-review"  *ngFor="let p of cancelAppointment" >
+
+    			<div class="inside-user"> 
+                <img [src]='getSafeUrl(p.customer_image)' *ngIf="p.customer_image!=null"/> 
+                 <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" *ngIf="p.customer_image==null">  
+                 </div>
+    			<div class="name">{{p.customer_name}} </div>
+                 <div class="name"><b>Barber name:</b>{{p.barber_name}}</div>
+    			<div class="name">{{p.customer_address}}</div>
+    			<div class="diff">
+    				<div *ngIf="p.customer_service">
+    					 {{p.customer_service}}
+               <span class="text-price" *ngIf="p.charge!=null">  ${{p.charge}}</span>
+               <span class="text-price" *ngIf="p.charge==null">  $30</span>
+    				</div>
+    				<div>
+    					{{p.date}} at {{p.time}}
+    				</div>
+    			</div>
+    			
+    			</div>
+                </div>
+    			</div>
+    		</div>
+
+</ion-content>

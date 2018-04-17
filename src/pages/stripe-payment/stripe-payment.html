@@ -1,0 +1,34 @@
+<ion-header>
+   <ion-navbar>
+      <button ion-button menuToggle icon-only class="button-logo">
+         <ion-icon name='menu'></ion-icon>
+      </button>
+      <ion-title>Payment</ion-title>
+   </ion-navbar>
+</ion-header>
+<ion-content padding>
+   <ion-item class="paymentItem secondItem">
+      <ion-input placeholder="Card Number" name="cardNumber" type="tel" minlength="15" maxlength="16" [(ngModel)]='card.number' #cardNumber="ngModel" required (keyup)="cardCheck(card.number)"></ion-input>
+      <ion-icon   item-end class="paymentIcon"><img [hidden]="!cardNumber.touched || cardNumber.valid" src="assets/img/error.png" class="img-src"></ion-icon>
+      <ion-icon  *ngIf="cardImage" item-end class="paymentCard"><img [hidden]="cardNumber.touched  && !cardNumber.valid" src="assets/img/{{cardImage}}" class="img-src"></ion-icon>
+   </ion-item>
+   <ion-item no-lines>
+      <ion-label fixed>Expiry month:</ion-label>
+      <ion-select [(ngModel)]="card.expMonth" multiple="false" name="expmonth" #expmonth="ngModel" required>
+      <ion-option value="{{a.month}}" *ngFor="let a of datemonth">{{a.month}}</ion-option>
+      </ion-select>
+   </ion-item>
+
+   <ion-item no-lines>
+      <ion-label fixed>Expiry year:</ion-label>
+      <ion-select [(ngModel)]="card.expYear"  multiple="false" name="expyear" #expyear="ngModel" required>
+      <ion-option value="{{a.value}}" *ngFor="let a of montth">{{a.month}}</ion-option>
+      </ion-select>
+   </ion-item>
+   <ion-item class="paymentItem thirdItem">
+      <ion-icon  item-start class="paymentIcon"><img src="assets/img/padlock.png" class="img-src"></ion-icon>
+      <ion-input placeholder="CVV"  name="CVC" type="tel" maxlength="4" minlength="3" [(ngModel)]='card.cvc' #CVC="ngModel" required></ion-input>
+      <ion-icon   item-end class="paymentIcon"><img [hidden]="!CVC.touched || CVC.valid" src="assets/img/error.png" class="img-src"><img *ngIf="CVC.touched && CVC.valid" src="assets/img/check-mark.png" class="img-src"></ion-icon>
+   </ion-item>
+<button ion-button block (click)="pay()" [disabled]="!cardNumber.valid || !CVC.valid ||!expmonth.valid ||!expyear.valid ">Pay Now</button>
+</ion-content>

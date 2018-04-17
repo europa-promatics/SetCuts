@@ -1,0 +1,41 @@
+<!--
+  Generated template for the SalonBarberListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button menuToggle icon-only class="button-logo">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>BARBERS LIST</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+ <div *ngIf="appointment==0" class="div-img">
+ <img src="http://18.220.97.146/barber/app_link/icon/indifferent1.png" class="img-div">
+ <div class="text-img"><b>No barber list found</b></div>
+ </div>
+<div *ngIf="appointment!=0">
+<div class="user-review"  *ngFor="let p of appointment" >
+
+    			<div class="inside-user"> <img src="http://18.220.97.146/barber/img/barberimage/{{p.barber_image}}"  *ngIf="p.barber_image!=null"/> 
+            <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg"  *ngIf="p.barber_image==null"> </div>
+    				<div class="full-service">
+    				<div class="pull-right">
+    				<button ion-button small color="redcolor" class="btn-view" (click)="viewBarberProfile(p,p.id)">View Profile</button>
+    			</div>
+    			<div class="name">{{p.fullname}} </div>
+    		
+    		<!-- 	<div class="service"><i>Services: {{p.service}}</i></div> -->
+    			
+    			
+    			</div>
+    			</div>
+          </div>
+</ion-content>

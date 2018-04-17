@@ -1,0 +1,372 @@
+
+table {
+    background-color: transparent;
+    display: inline-flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+page-barber-schedule {
+  .color-class{
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+  .full-slot{
+    width: 100%;
+    float: left;
+  }
+  .slot{
+  text-align: center;
+  color: #000;
+  font-family: 'OpenSans-Regular';
+  }
+ .scroll-div.row {
+    height: 180px;
+    overflow-x: hidden;
+    margin-bottom: 80px;
+    overflow-y: scroll;
+}
+  .selec-div{
+    text-align: center;
+  }
+  .cir-span{
+    border-radius: 100px;
+    height: 25px;
+    width: 25px;
+  }
+ion-card img {
+  display: inline-flex;
+  text-align: center;
+  width: 30%;
+}
+.w0{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.nodata {
+  text-align: center;
+  width: 100%;
+  color: #000;
+}
+  .card-ios {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 1.4rem;
+  left: 0px;
+  position: absolute;
+  top: 300px;
+  height: 200px;
+  width: calc(100% - 24px);
+}
+.card-md {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 1.4rem;
+  left: 0px;
+  position: absolute;
+  top: 300px;
+  height: 200px;
+  width: calc(100% - 24px);
+  z-index: 1;
+}
+
+.scoll{
+  height: 150px;
+}
+.button-ios.button-logo {
+  background-color: transparent;
+  border-radius: 4px;
+  color: #000;
+  float: right;
+  font-size: 1.7rem;
+  height: 1.8em;
+  margin: 0.4rem 0.2rem;
+  padding: 0;
+}
+.disable{
+  background: #fff;
+}
+.enable{
+  background: #cecece;
+}
+.white{
+  background: #fff;
+  }
+  .red{
+  background: #c72228;
+  }
+  .set button {
+    border-radius: 5px;
+    margin: 4px;
+}
+  .none {
+    // background: #cecece none repeat scroll 0 0;
+    color: #000;
+}
+.booked{
+  background: #c72228;
+  color: #000;
+}
+.color_class{
+ background: #25d366 none repeat scroll 0 0;
+    color: #000;
+}
+.button-md.button-logo {
+  background-color: transparent;
+  border-radius: 4px;
+  color: #000;
+  float: right;
+  font-size: 1.7rem;
+  height: 1.8em;
+  margin: 0.4rem 0.2rem;
+  padding: 0 1em;
+}
+
+.set{
+    text-align: left;
+}
+.push {
+    background: #c72228 none repeat scroll 0 0;
+    border-radius: 100px;
+    height: 8px;
+    width: 35px;
+}
+.push1 {
+    background: #000 none repeat scroll 0 0;
+    border-radius: 100px;
+    height: 8px;
+    width: 35px;
+}
+
+.button-small-ios {
+    font-size: 1.3rem;
+    height: 1em;
+    padding: 0 0.9em;
+}
+.button-small-md {
+    font-size: 1.3rem;
+    height: 1em;
+    padding: 0 0.9em;
+}
+	.row > div {
+    width: 30%;
+    margin: 4px;
+     // border-radius: 100px;
+     border: 1px solid #cecece;
+    padding: 0px;
+    text-align: center;
+}
+ .row {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid transparent;
+  display: flex;
+  flex-wrap: wrap;
+  height: 30%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 1;
+}
+.time-label.label {
+  border-radius: 0.25em;
+  color: #000;
+  display: inline;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.2em 0.6em 0.3em;
+  text-align: left;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.div-booking {
+      border-bottom: 1px solid #d5d5d5;
+    font-size: 16px;
+    padding: 10px;
+        color: #c72228;
+}
+.div-time {
+    padding: 7px 25px 0;
+}
+.div-images {
+    color: #000;
+    height: 28px;
+    text-align: center;
+    width: 100%;
+}
+.date-content{
+	padding-left:20px;
+  background: #e4e9f3;
+}
+h4 {
+    font-size: 18px;
+    text-align: center;
+}
+.button-close {
+  background-color: transparent;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 500;
+  height: 3.6rem;
+  margin: 0.4rem 0.2rem;
+  overflow: hidden;
+  padding: 0 1.1em;
+  text-transform: uppercase;
+  border: none !important;
+  box-shadow: none !important;  
+}
+
+ .calender {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 70%;
+  width: 100%;
+}
+	.calender-content-text span {
+	  /*background-color: #c72228;
+	  border-radius: 100px;
+	  width: 18px;
+	  display: inline-block;
+	  height: 18px;
+	  line-height: 1.6;*/
+	  font-weight: normal;
+	  
+	}
+
+	.calender-header{
+		height: 45px;
+		width: 100%;
+		background-color: #C72228;
+		float: left;
+		text-align: center;
+		color:white;
+		display: flex;
+	}
+	.calender-sebheader{
+		color: #000;
+		float: left;
+		height: 40px;
+		text-align: center;
+		width: 100%;
+	}
+	.calender-subheader-text{
+		color: #000;
+		float: left;
+		font-size: 0.8em;
+		height: 100%;
+		margin: 0;
+		padding: 14px 0;
+		width: calc(14.2858%);
+	}
+	.calender-content-text {
+		float: left;
+		border-radius: 0;
+		color: #000;
+		font-size: 0.8em;
+		margin: 0;
+		padding: 15px 0;
+		width: calc(14.2858%);
+	}
+	.calender-content{
+		/*background-color: #dddddd;*/
+		/*border: 1px solid rgba(0,0,0,0.1);*/
+		float: left;
+		width: 100%;
+		text-align: center;
+	}
+	.calender-header-text{
+		width: calc( 100% - 40px ) ;
+		margin: auto; 
+		float: left;
+		align-self: center;
+	}
+	.left-arrow{
+		width:20px;
+		float: left;
+		align-self: center;
+	}
+	.right-arrow{
+		width:20px;
+		float: right;
+		align-self: center;
+	}
+	.mainbody{
+		background-color: #eee;
+	}
+	.full-date-slot{
+		background: #E4E9F3;
+	}
+.button-clear-ios {
+background-color: transparent;
+    border-color: transparent;
+    color: #c72228;
+    font-size: 14px;
+    padding: 6px;
+}
+.button-clear-md {
+background-color: transparent;
+    border-color: transparent;
+    color: #c72228;
+    font-size: 14px;
+    padding: 6px;
+}
+.circle {
+    float: left;
+    padding: 10px 0 0 12px;
+    width: 50%;
+}
+.circle-span {
+border-radius: 100px;
+    height: 25px;
+    width: 25px;
+      margin-left: 15px;
+}
+.red{
+     background: #c72228 none repeat scroll 0 0;
+}
+.green{
+     background: #25d366 none repeat scroll 0 0;
+}
+.grey{
+     background: #cecece none repeat scroll 0 0;
+}
+.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+    color: #222;
+}
+.toolbar-background-md {
+    background: #fff none repeat scroll 0 0;
+    border-color: #b2b2b2;
+}
+.button-md.button-logo {
+    background-color: transparent;
+    border-radius: 4px;
+    color: #000;
+    float: right;
+    font-size: 1.7rem;
+    height: 1.8em;
+    margin: 0.2rem;
+    padding: 0;
+}
+.toolbar-title-md {
+    background: #fff none repeat scroll 0 0;
+    color: #000;
+    font-family: "OpenSans-Regular";
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    width: 80%;
+}
+}

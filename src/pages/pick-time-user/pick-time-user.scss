@@ -1,0 +1,304 @@
+
+  .action-sheet-md .action-sheet-button {
+    background: transparent none repeat scroll 0 0;
+    border-bottom: 0.55px solid #d6d6da;
+    color: #c72228;
+    font-size: 2rem;
+    margin: 0;
+    min-height: 5.6rem;
+    padding: 18px;
+}
+page-pick-time-user {
+
+  .div-booking {
+      border-bottom: 1px solid #d5d5d5;
+    font-size: 16px;
+     text-align: center;
+    padding: 10px;
+        color: #c72228;
+}
+.div-images {
+    color: #000;
+    height: 28px;
+    text-align: center;
+    width: 100%;
+}
+.toolbar-title-md {
+  background: #fff none repeat scroll 0 0;
+    color: #000;
+    font-family: "OpenSans-Regular";
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+.toolbar-title-ios {
+  background: #fff none repeat scroll 0 0;
+    color: #000;
+    font-family: "OpenSans-Regular";
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+.proceed-btn {
+    margin: auto auto auto 15px;
+    position: fixed;
+    top: 90%;
+    width: 85%;
+    color:#fff;
+    font-family: 'OpenSans-Regular';
+}
+.text-data {
+    float: left;
+    height: 35px;
+    width: 100%;
+}
+.ion-md-home::before {
+    content: "";
+    font-size: 25px;
+}
+.button-md.button-home {
+    background-color: transparent;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: 500;
+    float: right;
+    height: 2.4rem;
+    margin: 0.9rem 0.2rem;
+    overflow: hidden;
+    padding: 0 1.1em;
+    text-transform: uppercase;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+.toolbar-background-md {
+    background: #fff none repeat scroll 0 0;
+    border-color: #b2b2b2;
+}
+.toolbar-background-ios {
+    background: #fff none repeat scroll 0 0;
+    border-color: #b2b2b2;
+}
+.date-content{
+	padding-left:20px;
+  background: #fff;
+}
+.ion-ios-arrow-back::before {
+  color: #fff;
+  content: "";
+  padding-left: 4px;
+}
+
+.ion-ios-arrow-back::before {
+    color: #000;
+    content: "";
+    padding-left: 4px;
+    margin-top: 10px;
+}
+
+ .label {
+  border-radius: 0.25em;
+  color: #222;
+  display: inline;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.2em 0.6em 0.3em;
+  text-align: justify;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+h4 {
+    font-size: 18px;
+    padding: 10px;
+}
+.item-md {
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+    box-shadow: none;
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: normal;
+  margin: 28px auto 24px;
+    width: 95%;
+    padding: 0;
+    position: relative;
+    text-transform: none;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+.item-ios {
+     background-color: #fff;
+    border: 1px solid #d7d7d7;
+    box-shadow: none;
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: normal;
+  margin: 28px auto 24px;
+    width: 95%;
+    padding: 0;
+    position: relative;
+    text-transform: none;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+.div-booking {
+    border-bottom: 1px solid #d7d7d7;
+    font-size: 16px;
+    padding: 10px;
+    font-family: 'OpenSans-Regular';
+}
+.div-time {
+    padding: 7px 25px 0;
+     font-family: 'OpenSans-Regular';
+}
+.full-date-slot{
+    padding-bottom: 15%;
+    background: #E4E9F3;
+  }
+  .full-data {
+    width: 100%;
+    float: left;
+}
+.salon-name {
+font-family: 'OpenSans-Regular';
+}
+.salon-address {
+    font-family: "OpenSans-Regular";
+    padding-top: 3px;
+}
+img.img-head {
+    height: 195px;
+    object-fit: cover;
+    vertical-align: middle;
+    width: 100%;
+}
+.h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+}
+ .right-image {
+  float: right;
+  margin-top: 2%;
+  text-align: center;
+  width: 100%;
+}
+ .full-div {
+  float: left;
+  padding-bottom: 5%;
+  width: 100%;
+}
+.inside-div{
+border-bottom: 1px solid #D7D7D7; 
+width: 100%;
+padding-bottom: 10%;
+  float: left;
+  } 
+
+
+.card {
+  padding-top: 0;
+  width: 100%;
+  border-bottom: 1px solid #D7D7D7; 
+  padding-bottom: 6%;
+
+}
+.card1 {
+  width: 100%;
+   padding-top: 12px;
+  border-bottom: 1px solid #D7D7D7; 
+  padding-bottom: 11%;
+
+}
+.purchase{
+  font-size: 18px;
+  text-align: center;
+}
+.pull-right {
+    float: right !important;
+    padding-right: 10px;
+    font-family: 'OpenSans-Regular';
+}
+.pull-left {
+    float: left !important;
+    // margin-right: 18px;
+    margin-left:5px;
+    font-family: 'OpenSans-Regular';
+}
+.ion-ios-arrow-forward::before {
+    color: #bfbfbf;
+    content: "";
+}
+
+.ion-md-card::before {
+    color: #bfbfbf;
+    content: "";
+}
+.ion-ios-arrow-back::before {
+  color: #000;
+  content: "";
+  padding-left: 4px;
+}
+.back-button-text-ios {
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+.back-button-text-md {
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+.date-text {
+    float: left;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.span-text-data{
+  width: 100%;
+  text-transform: capitalize;
+}
+.item-style {
+    margin-left: 5px;
+    font-family: 'OpenSans-Regular';
+}
+.total {
+    padding-top: 15px;
+}
+.button-md-redcolor {
+    background-color: #c72228;
+    color: #fff;
+    top: 10%;
+}
+.button-ios-redcolor {
+    background-color: #c72228;
+    color: #fff;
+    top: 10%;
+}
+.button-ios {
+  background-color: #c72228;
+  border-radius: 4px;
+  color: #fff;
+  float: right;
+  font-size: 1.6rem;
+  height: 2.8em;
+  margin: 0.4rem 0.2rem;
+  padding: 1em 1em;
+}
+}
+.picker-md .picker-button, .picker-md .picker-button.activated {
+  background: transparent none repeat scroll 0 0;
+  box-shadow: none;
+  color: #c72228;
+  height: 44px;
+  margin: 0;
+}
+.picker-md .picker-prefix, .picker-md .picker-suffix, .picker-md .picker-opt.picker-opt-selected {
+  color: #c72228;
+}
+.picker-ios .picker-button, .picker-ios .picker-button.activated {
+  background: transparent none repeat scroll 0 0;
+  box-shadow: none;
+  color: #c72228;
+  height: 44px;
+  margin: 0;
+}
+.picker-ios .picker-prefix, .picker-ios .picker-suffix, .picker-ios .picker-opt.picker-opt-selected {
+  color: #c72228;
+}

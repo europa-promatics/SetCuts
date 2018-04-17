@@ -1,0 +1,134 @@
+<!--
+  Generated template for the BarberSchedulePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+<!--   <button ion-button icon-only class="button-logo" (click)="dismiss()">
+         <ion-icon name='close'></ion-icon>
+      </button> -->
+    <ion-title>Barber schedule</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<div class="calender">
+    <div class="calender-header">
+      <ion-icon (click)="previousMonth()" class="left-arrow" name="ios-arrow-back"></ion-icon>
+        <ion-label class="calender-header-text">
+          {{month[selectedMonth]}} {{selectedYear}}
+        </ion-label> 
+      <ion-icon (click)="nextMonth()" class="right-arrow" name="ios-arrow-forward"></ion-icon>
+    </div>
+    <div class="calender-sebheader">
+      <ion-label *ngFor="let day of days" class="calender-subheader-text">{{day}}</ion-label> 
+    </div>
+    <div class="calender-content">
+<ion-label class="calender-content-text" id="{{b}}datediv" (click)="pickDate(b)" *ngFor="let b of box;let i = index ">
+<span>{{b}}</span>
+</ion-label>
+    </div>
+  </div>
+
+<!-- <div class="set">
+<div class="full">
+<div class="push"></div><span>Barber's time can be selected for available</span>
+</div>
+<div class="full">
+<div class="push1"></div><span>Barber's time can be selected for unavailable</span>
+</div>
+</div> -->
+
+<!--   <div class="set" *ngIf="selectDate"><b>Date:</b>{{selectDate}}</div>
+<div class="set" *ngIf="available!='true'"><b>Set Available time</b>
+<span>
+<button ion-button small  (click)="edit()" class="{{changecolor}}">Edit</button>
+<button ion-button small  (click)="Fix_schedule()" class="{{savechangecolor}}">Save</button>
+</span>
+</div>
+
+
+
+
+<ion-row *ngIf="available!='true'">
+<div *ngFor="let a of myTime;let i=index"  class="{{a.check}} {{backcolor}}" id="var_{{i}}"> 
+	<ion-col  (click)="tapnpick(i,a)" *ngIf="myflagCheck">{{a.time}}</ion-col>
+	<ion-col   (click)="tapnpick(i,a)" *ngIf="!myflagCheck">{{a.time}}</ion-col>
+	</div>
+  </ion-row>
+
+  <div *ngIf="available=='true'">
+<div class="nodata" ><img src="assets/icon/hourglass.png"></div>
+    <div class="nodata" ><b>Time Schedule Not Found!</b></div>
+  </div>
+
+
+  <div *ngIf="available!='true'">
+  <div class="circle">
+  <div class="circle-span green"></div>
+  <span class="text-span">Available</span>
+
+</div>
+  <div class="circle">
+  <div class="circle-span grey"></div>
+  <span class="text-span">Not available</span>
+
+</div>
+
+  <div class="circle">
+  <div class="circle-span red"></div>
+  <span class="text-span">Already booked</span>
+
+</div>
+</div> -->
+<ion-card>
+<ion-card-header><div>
+<div *ngIf="available=='true'" class="selec-div"> <b>{{selectDate}}</b></div>
+<span *ngIf="available!='true'"><b>{{selectDate}}</b></span>
+<span class="pull-right w0 {{savechangecolor}}" (click)="Fix_schedule()" *ngIf="available!='true'">Save</span>
+<span class="pull-right w0 {{changecolor}}" (click)="edit()"  *ngIf="available!='true'">Edit</span>
+</div>
+</ion-card-header>
+<ion-content>
+<ion-row  class="scroll-div" *ngIf="available!='true'">
+<div *ngFor="let a of myTime;let i=index" class="{{a.check}} {{backcolor}}" id="var_{{i}}" >
+<ion-col (click)="tapnpick(i,a)" *ngIf="myflagCheck" >{{a.time}}</ion-col>
+<ion-col (click)="tapnpick(i,a)" *ngIf="!myflagCheck">{{a.time}}</ion-col>
+</div> 
+</ion-row>
+<div *ngIf="available=='true'" class="scoll">
+<div class="nodata" ><img src="http://18.220.97.146/barber/app_link/icon/hourglass.png"></div>
+<div class="nodata" ><b>Time Schedule Not Found!</b></div>
+</div>
+</ion-content>
+<!-- <ion-footer  *ngIf="available!='true'">
+<div>
+<span class="color-class green">
+Available
+</span>
+<span class="color-class red">Booked</span>
+<span class="color-class grey">Not Available</span>
+</div>
+</ion-footer> -->
+</ion-card>
+
+</ion-content>
+<ion-footer  *ngIf="available!='true'">
+<!-- <div class="full-slot">
+<span class="green">
+Available
+</span>
+<span class="red">Booked</span>
+<span class="grey">Not Available</span>
+</div> -->
+<ion-row>
+<ion-col class="green slot">Available</ion-col>
+<ion-col class="red slot">Booked</ion-col>
+<ion-col class="grey slot">Not Available</ion-col>
+</ion-row>
+</ion-footer>

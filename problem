@@ -1,0 +1,6 @@
+When webpackJsonp is not defined
+
+add script
+<script src="build/vendor.js"></script>
+
+

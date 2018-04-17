@@ -1,0 +1,54 @@
+page-salon-account-section {
+	.content-account{
+		background:#222;
+	}
+    .toolbar-background {
+        background: #2B2B2B;
+    }
+	.toolbar-title-md {
+	  background: #2b2b2b none repeat scroll 0 0;
+	  color: #fff;
+	  font-family: "OpenSans-Regular";
+	  font-size: 2rem;
+	  font-weight: 500;
+	  padding: 0 0px;
+	}
+	.ion-ios-arrow-back::before {
+  color: #fff;
+  content: "";
+  padding-left: 4px;
+}
+.toolbar-title {
+  display: inline-table;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.back-button-text-ios {
+    color: #2b2b2b;
+    letter-spacing: -0.01em;
+}
+.ion-ios-menu::before {
+    color: #fff;
+    content: "";
+}
+    .toolbar-title-ios {
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 500;
+        pointer-events: auto;
+        font-family: 'OpenSans-Regular';
+        text-align: center;
+    }
+   .ion-md-menu::before {
+	  color: #fff;
+	  content: "";
+	}
+.full-data {
+    padding-top: 25px;
+}
+.btn-acc{
+ margin-bottom: 40px;	
+}
+}

@@ -1,0 +1,95 @@
+page-new {
+	/* .maindiv{
+		float: left;
+	} */
+	ion-spinner {
+  display: list-item;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 100%;
+}
+
+.toolbar-title-md {
+    background: #fff none repeat scroll 0 0;
+    color: #000;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    width: 80%;
+    font-family: 'OpenSans-Regular';
+}
+	  .content-view{
+    padding: 5px;
+    /* background: #cecece none repeat scroll 0 0; */
+  }
+.text {
+    color: #c72228;
+    font-size: 16px;
+    padding: 15px;
+    text-align: center;
+    background: #cecece;
+    text-transform: uppercase;
+}
+	.button-ios {
+  background-color: transparent;
+  border-radius: 4px;
+  color: #000;
+  float: right;
+  font-size: 1.6rem;
+  height: 1.8em;
+  margin: 0.4rem 0.2rem;
+  padding: 0 1em;
+}
+.button-md {
+  background-color: transparent;
+  border-radius: 4px;
+  color: #000;
+  float: right;
+  font-size: 1.6rem;
+  height: 1.8em;
+  margin: 0.4rem 0.2rem;
+  padding: 0 1em;
+}
+.rTableCell > span {
+    color: #c72228;
+}
+	.rWrap{
+		float: left;
+		width: 100%;
+	}
+	.r-div{
+		width: 80%;
+		float: left;
+		 overflow-y: auto;
+	}
+	.lTable{
+		width: 20%;
+		float: left;
+	}
+	.rTable{
+		display: table;
+	}
+	.rTableRow {
+	  	display: table-cell;
+		min-width: 80px;
+	}
+	.rTableHead{
+		background: #222 none repeat scroll 0 0;
+		color: #fff;
+		height: 40px;
+		overflow: hidden;
+		padding: 3px;
+		text-align: center;
+	}
+	.rTableCell {
+	  	border: 1px solid #e2e2e2;
+		height: 50px;
+		overflow: hidden;
+		text-align: center;
+		padding: 1px;
+	}
+
+}
+

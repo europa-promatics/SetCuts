@@ -1,0 +1,54 @@
+<!--
+  Generated template for the SalonViewuserProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>USER PROFILE</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+
+
+
+
+<div class="div-user-img">
+	  <div class="parent">
+	    <div class="circle">
+           <img src="{{image}}" class="img-logo" *ngIf="image"> 
+
+            <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" class="img-logo" *ngIf="!image">
+
+        </div>
+        <span class="color_white">{{username}}</span>
+	</div>
+</div>
+<div class="edit-profile">
+	<div class="field">Contact Number-</div>
+	<div class="filed-data">{{phonenumber}}</div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Email id-</div>
+	<div class="filed-data">{{email}}</div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Address</div>
+	<div class="filed-data">{{address}}</div>
+</div>
+
+<!-- <div class="edit-profile">
+	<div class="field">SERVICE</div>
+	<div class="filed-data">Hair Style</div>
+</div> -->
+<!-- <button ion-button block color="redcolor" class="btn-edit" (click)="assignbarber()">Assign barber to user</button> -->
+
+</ion-content>

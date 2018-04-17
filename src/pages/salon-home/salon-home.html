@@ -1,0 +1,258 @@
+
+
+<ion-header>
+   <ion-navbar>
+      <button ion-button menuToggle icon-only class="button-logo">
+         <ion-icon name='menu'></ion-icon>
+      </button>
+      <ion-searchbar (ionInput)="getItems($event)" placeholder="Search Salon"></ion-searchbar>
+      <ion-buttons end  >
+         <button icon-only ion-button (click)="salon_notification()"  class="btn-notify">
+            <ion-icon name="notifications" ></ion-icon>
+         </button>
+          <span class="span-item" *ngIf="user_count>0">{{user_count}}</span>
+      </ion-buttons>
+
+       
+   </ion-navbar>
+</ion-header>
+<ion-content class="salonhome" >
+<!-- <button ion-button clear (click)="pay()">Pay</button> -->
+<!--  <ion-spinner name="ios" color="redcolor" *ngIf="!content"></ion-spinner> -->
+    <ion-card class="card-div" *ngIf="showcard=='true'">
+        <ion-card-header>
+            <span class="pull-left"> Review & Rating</span>
+            <span class="pull-right-rate" (click)="close_rating()">
+                <ion-icon name="close-circle"></ion-icon>
+            </span>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-row class="row-div">
+                <ion-col  class="col-div" >
+                    <ion-icon name="star-outline" class="star-col" (click)="add(1)" *ngIf="first!='true'"></ion-icon>
+                    <ion-icon name="star" class="star-col-active" (click)="sub(1)" *ngIf="first=='true'"></ion-icon>
+                </ion-col>
+                <ion-col class="col-div" >
+                    <ion-icon name="star-outline" class="star-col"  (click)="add(2)" *ngIf="second!='true'"></ion-icon>
+                    <ion-icon name="star" class="star-col-active"  (click)="sub(2)" *ngIf="second=='true'"></ion-icon>
+                </ion-col>
+                <ion-col  class="col-div" >
+                    <ion-icon name="star-outline" class="star-col"  (click)="add(3)" *ngIf="third!='true'"></ion-icon>
+                    <ion-icon name="star" class="star-col-active"  (click)="sub(3)" *ngIf="third=='true'"></ion-icon>
+                </ion-col>
+                <ion-col  class="col-div"  >
+                    <ion-icon name="star-outline" class="star-col" (click)="add(4)" *ngIf="forth!='true'"></ion-icon>
+                    <ion-icon name="star" class="star-col-active"  (click)="sub(4)" *ngIf="forth=='true'"></ion-icon>
+                </ion-col>
+                <ion-col  class="col-div"  >
+                    <ion-icon name="star-outline" class="star-col" (click)="add(5)" *ngIf="fifth!='true'"></ion-icon>
+                    <ion-icon name="star" class="star-col-active"  (click)="sub(5)" *ngIf="fifth=='true'"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <textarea class="textarea-data" placeholder="Reviews..." rows="5" cols="26" [(ngModel)]="rating_text"></textarea>
+            <button ion-button block class="btn-div" color="redcolor" (click)="submit_rating()">Submit</button>
+        </ion-card-content>
+    </ion-card>
+
+
+
+
+
+
+   <div class="container" *ngFor="let p of content; let i= first" >
+
+      <div *ngIf="p.image!=null">
+         <div  (click)="salon_detail(p.id,p.latitude,p.longitude,p)">
+         <img src="http://18.220.97.146/barber/img/salonprofileimage/{{p.image}}" alt="" >
+
+      </div>
+   </div>
+   <div *ngIf="p.image==null" >  
+      <img src="http://18.220.97.146/barber/app_link/img/no-image-available.jpg" class="img-salon"   (click)="salon_detail(p.id,p.latitude,p.longitude,p)" >
+      <img src="http://18.220.97.146/barber/app_link/img/shadow.png" class="img-salon" (click)="salon_detail(p.id,p.latitude,p.longitude,p)">
+   </div>
+   <div class="full-text-salon" >
+      <div class="inside-full-text">{{p.fullname}}</div>
+      <div class="inside-full-text1">{{p.description}}</div>
+      <ion-grid *ngFor="let r of average">
+      <div *ngIf="r.salon_id==p.id">
+
+         <ion-row *ngIf="r.avgrating>=4.5 && r.avgrating<=5.0" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+         <ion-row *ngIf="r.avgrating>=4.0 && r.avgrating<4.5" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=3.5 && r.avgrating<4.0" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=3.0 && r.avgrating<3.5" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=2.5 && r.avgrating<3.0" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=2.0 && r.avgrating<2.5" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=1.5 && r.avgrating<2.0" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=1.0 && r.avgrating<1.5" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+          <ion-row *ngIf="r.avgrating<1" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+          
+</div>
+
+      </ion-grid>
+   </div>
+   </div>
+   <ion-segment [(ngModel)]="Near" (click)="seg(content,average)"  showWhen="android">
+   <ion-segment-button value="Nearby" class="border">
+      Nearby
+   </ion-segment-button>
+   <ion-segment-button value="Favourites">
+      Favourites
+   </ion-segment-button>
+   </ion-segment>
+</ion-content>
+
+<ion-footer class="footer-color" showWhen="ios">
+    <button ion-button small class="btn-left" (click)="map()">Nearby</button>
+     <button ion-button small class="btn-right" (click)="favourite(content,average)">Favourites</button>
+</ion-footer>

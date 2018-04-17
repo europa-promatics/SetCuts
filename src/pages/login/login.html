@@ -1,0 +1,51 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+   
+    <ion-title>LOGIN</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="login">
+ <!-- <div class="img-tag-div-login"><img src="assets/icon/logo.png" class="img-logo-login"></div> -->
+  <div class="parent">
+    <div class="middle">
+        <div class="circle">
+           <img src="assets/icon/original.png" class="img-logo"> 
+        </div>
+    </div>
+</div>
+<!-- <div class="img-div"><img src="assets/icon/Logo_16May.png"></div> -->
+<ion-list>
+<form [formGroup]="loginform">
+  <ion-item class="item-input" >
+    <ion-input type="text" placeholder="Email Address"  formControlName="emailaddress" [(ngModel)]="email"></ion-input>
+  </ion-item>
+<p style="color:#c72228"  *ngIf="!loginform.controls.emailaddress.valid && (loginform.controls.emailaddress.dirty )"> Invalid email address.</p>
+
+  <ion-item class="item-input" >
+    <ion-input type="password" formControlName="pass" placeholder="Password"  [(ngModel)]=password></ion-input>
+  </ion-item>
+     <p style="color:#c72228" *ngIf="!loginform.controls.pass.valid && (loginform.controls.pass.dirty )" > Password should be in range of 3-12 character</p>
+     </form>
+ <div class="input-div">
+ <ion-checkbox color="redcolor"   ng-true-value="'1'" ng-false-value="'0'"  checked="false"  [(ngModel)]="remembers" >
+ </ion-checkbox>
+ <span class="check" > Remember me. </span></div>
+
+<div class="input-div">
+ <ion-checkbox color="redcolor" ng-true-value="'1'" ng-false-value="'0'" checked="false" [(ngModel)]="flag"></ion-checkbox><span class="check" >I agree to accept your </span><a class="anchor-terms"><u (click)="terms()">terms & conditions.</u></a></div>
+</ion-list>
+<div class="forget-btn" (click)="forgot()"><u>Forgot password?</u></div>
+<button ion-button block color="redcolor" class="btn-login" (click)="login()" [disabled]="!loginform.valid">LOGIN</button>
+<div class="or-line"></div>
+<div class="div-sign">Don't have an account? <a class="anchor-terms" (click)="signup()"><u>Signup Here</u></a></div>
+</ion-content>

@@ -1,0 +1,192 @@
+
+
+<ion-header>
+   <ion-navbar>
+<ion-title>Favourites</ion-title>
+   </ion-navbar>
+</ion-header>
+<ion-content class="salonhome" >
+
+  
+
+   <div  *ngFor="let p of uniqSalon">
+   <ion-card *ngIf="p.fav_status=='true'" (click)="salon_detail(p.id,p.latitude,p.longitude,p)">
+    <img src="http://18.220.97.146/barber/img/salonprofileimage/{{p.image}}" 
+    *ngIf="p.image!=null"/>
+    <img src="http://18.220.97.146/barber/app_link/img/no-image-available.jpg"  *ngIf="p.image==null"> 
+     <img src="http://18.220.97.146/barber/app_link/img/shadow.png" class="img-salon">
+    <div class="card-title">{{p.salonname}}</div>
+    <div class="card-subtitle">{{p.description}}</div>
+
+    <ion-grid *ngFor="let r of average">
+      <div *ngIf="r.salon_id==p.id">
+
+         <ion-row *ngIf="r.avgrating>=4.5 && r.avgrating<=5.0" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+         <ion-row *ngIf="r.avgrating>=4.0 && r.avgrating<4.5" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=3.5 && r.avgrating<4.0" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=3.0 && r.avgrating<3.5" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=2.5 && r.avgrating<3.0" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=2.0 && r.avgrating<2.5" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=1.5 && r.avgrating<2.0" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="r.avgrating>=1.0 && r.avgrating<1.5" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+          <ion-row *ngIf="r.avgrating<1" >
+            <ion-col class="star">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star1">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star1" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+          
+</div>
+
+      </ion-grid>
+  </ion-card>
+</div>
+
+
+</ion-content>
+

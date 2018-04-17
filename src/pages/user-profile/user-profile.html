@@ -1,0 +1,104 @@
+<!--
+  Generated template for the UserProfile page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button menuToggle icon-only class="button-logo">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title *ngIf="edit!='true'">PROFILE</ion-title>
+    <ion-title *ngIf="edit=='true'" class="title-edit">PROFILE</ion-title>
+      <ion-buttons end  *ngIf="edit=='true'">
+            <button icon-only ion-button (click)="save_profile()">
+               <ion-icon name="checkmark-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+
+<div *ngIf="edit!='true'">
+<div class="div-user-img">
+	  <div class="parent">
+	    <div class="circle">
+           <img src="{{image}}" class="img-logo" *ngIf="image"> 
+
+            <img src="assets/img/team-member2.jpg" class="img-logo" *ngIf="!image">
+
+        </div>
+        <span class="color_white">{{username}}</span>
+	</div>
+</div>
+<div class="edit-profile">
+	<div class="field">Contact Number-</div>
+	<div class="filed-data">{{phonenumber}}</div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Email id-</div>
+	<div class="filed-data">{{email}}</div>
+</div>
+
+<div class="edit-profile">
+  <div class="field">Address</div>
+  <div class="filed-data">{{address}}</div>
+</div>
+
+
+
+
+<button ion-button block color="redcolor" class="btn-edit" (click)="edit_profile()" *ngIf="barber_view!='true'">Edit Profile </button>
+<button ion-button block color="redcolor" class="btn-edit" (click)="map()" *ngIf="barber_view=='true'">Check Location On Map </button>
+
+</div>
+
+
+
+<div *ngIf="edit=='true'">
+<div class="div-user-img">   
+	  <div class="parent">
+	    <div class="circle">
+	    <ion-icon name="create" class="edit_pen" (click)="presentActionSheet()"></ion-icon>
+           <img src="{{image}}" class="img-logo" (click)="presentActionSheet()" *ngIf="image"> 
+            <img src="assets/img/team-member2.jpg" class="img-logo" *ngIf="!image">
+        </div>
+        <span class="color_white">  <ion-item class="item-input">
+    <ion-input type="text" placeholder="Full Name"  [(ngModel)]="username"></ion-input>
+  </ion-item> </span>
+	</div>
+</div>
+<div class="edit-profile">
+	<div class="field">Contact Number-</div>
+	<div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="tel" placeholder="Contact Number" [(ngModel)]="phonenumber"></ion-input>
+  </ion-item>
+  </div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Email id-</div>
+	<div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="email" placeholder="Email id" [(ngModel)]="email" disabled></ion-input>
+  </ion-item></div>
+</div>
+
+<div class="edit-profile">
+  <div class="field">Address</div>
+  <div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="text" placeholder="address" [(ngModel)]="address"></ion-input>
+  </ion-item></div>
+</div>
+
+
+
+<!-- <button ion-button block color="redcolor" class="btn-edit" (click)="save_profile()">SAVE </button> -->
+</div>
+</ion-content>

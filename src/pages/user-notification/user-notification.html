@@ -1,0 +1,51 @@
+<!--
+  Generated template for the SalonNotificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>NOTIFICATIONS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="contact-content">
+<!--  <ion-spinner name="ios" color="redcolor" *ngIf="!content" ></ion-spinner> -->
+<!--  <button ion-button block (click)="payments_extra()">Pay Pal</button> -->
+ <div *ngIf="nonotfication=='true'" class="div-img">
+ <img src="assets/icon/disable-alarm.png" class="img-div">
+ <div class="text-img">No New Notification</div>
+ </div>
+<div *ngIf="nonotfication!='true'">
+<div  *ngFor="let p of content;let i=index">
+<div class="user-review i{{p.index_status_changed}}" (click)="check_notification(i)">
+
+    			<div class="inside-user " >
+          <img  src="http://18.220.97.146/barber/img/barberimage/{{p.barberimage}}" class="img-logo img-obj"  *ngIf="p.barberimage!=null">
+           <img class="img-obj" src="assets/img/team-member2.jpg" class="img-logo" *ngIf="p.barberimage==null">
+           </div>
+    			<div class="name"  (click)="salon_view_User_profile(p.barber_id,p.salon_id)"><b><a>{{p.barbername}} barber has confirmed your request</a></b> </div>
+    			<div class="name-service" (click)="confirm(p.booking_id)"> Your service of <strong>{{p.service}} {{p.date}} at {{p.time}}</strong> has been confirmed with this barber .</div>
+    			<div class="diff">
+    				<div class="name-service" *ngIf="p.barbercontactnumber">
+    					<b>Contact no:-</b> {{p.barbercontactnumber}}
+    				</div>
+          
+    			</div>
+<!-- <div class="btn-div"> -->
+<!-- <button ion-button small color="redcolor" (click)="payment(p.booking_id)">Pay {{p.charge}}
+</button> -->
+<!-- <button ion-button small color="redcolor" (click)="Review(p.booking_id)">Review 
+</button> -->
+    				<!-- <button ion-button small color="redcolor" (click)="cancel(p.booking_id)">cancel</button></div> -->
+    		<!-- 	<div class="pull-right">
+    				<button ion-button small color="redcolor">cancel</button>
+    			</div> -->
+    			</div>
+          </div>
+          </div>
+</ion-content>

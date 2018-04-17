@@ -1,0 +1,58 @@
+page-showpath {
+#mape {
+        height: 100%;
+        width: 100%;
+      }
+ .toolbar-md {
+    min-height: 30px;
+    padding: 4px;
+}
+ .toolbar-ios {
+    min-height: 30px;
+    padding: 4px;
+}
+.toolbar-md-dark .toolbar-background-md {
+    background: #fff none repeat scroll 0 0;
+}
+.toolbar-ios-dark .toolbar-background-ios {
+    background: #fff none repeat scroll 0 0;
+}
+.back-button-text-ios {
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+.back-button-text-md {
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+.button-md {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 500;
+  height: 3.6rem;
+  margin: 0.4rem 0.2rem;
+  overflow: hidden;
+  padding: 0 1.1em;
+  text-transform: uppercase;
+  float: right;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+.button-ios {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 500;
+  height: 3.6rem;
+  margin: 0.4rem 0.2rem;
+  overflow: hidden;
+  padding: 0 1.1em;
+  text-transform: uppercase;
+  float: right;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+}

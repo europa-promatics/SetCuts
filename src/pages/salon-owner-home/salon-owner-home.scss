@@ -1,0 +1,126 @@
+page-salon-owner-home {
+.content-about{
+		background:#222;
+	}
+    .toolbar-background {
+        background: #2B2B2B;
+    }
+ .toolbar-title-md {
+  background: #2b2b2b none repeat scroll 0 0;
+  color: #fff;
+  font-family: "OpenSans-Regular";
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+    .toolbar-title-ios {
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 500;
+        pointer-events: auto;
+        font-family: 'OpenSans-Regular';
+        text-align: center;
+    }
+    .bar-buttons-ios[end] {
+    order: 5;
+    padding-right: 12px;
+    text-align: end;
+    color: #fff;
+}
+.ion-ios-arrow-back::before {
+  color: #fff;
+  content: "";
+  padding-left: 4px;
+}
+.back-button-text-ios {
+    color: #2b2b2b;
+    letter-spacing: -0.01em;
+}
+
+
+.ion-md-notifications::before {
+    color: #fff;
+    content: "";
+}
+.ion-ios-notifications::before {
+    color: #fff;
+    content: "";
+}
+.bar-buttons-md[end] {
+    order: 5;
+    padding-right: 12px;
+    text-align: end;
+    color: #fff;
+}
+  .ion-md-arrow-back::before {
+    color: #fff;
+    content: "";
+}
+.ion-md-menu::before {
+    color: #fff;
+    content: "";
+}
+
+.ion-ios-menu::before {
+    color: #fff;
+    content: "";
+}
+.grid {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    width: 100%;
+}
+.h6 {
+  color: #fff;
+  font-family: "OpenSans-Regular";
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.part.h6 {
+  color: #fff;
+  font-family: "OpenSans-Regular";
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  margin-left: 6px;
+}
+
+.col {
+  border: 0.55px solid #2b2b2b;
+  flex-basis: 0;
+  flex-grow: 1;
+  height: 118px;
+  margin: 0;
+  max-width: 100%;
+  min-height: 1px;
+  padding: 5px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+img {
+    border: 0 none;
+    max-width: 30%;
+    padding-top: 15px;
+    width: 100%;
+}
+.a{
+  background: #c72228;
+}
+@media screen and (min-width:400px)
+  {
+   img {
+    border: 0 none;
+    max-width: 10%;
+    padding-top: 15px;
+    width: 100%;
+}
+  }
+}

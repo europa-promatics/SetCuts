@@ -1,0 +1,18 @@
+<!--
+  Generated template for the AddressPopupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<div class="popup-container">
+	<ion-list no-lines class="">
+	  <ion-item class="item-input">
+	    <ion-label stacked style="color: #000">Enter Booking Address</ion-label>
+	    <ion-input type="text" [(ngModel)]="address" style="border:1px solid #222"></ion-input>
+	  </ion-item>
+	</ion-list>
+	<button ion-button color="dark" (click)="onSubmit()">Submit</button>
+</div>

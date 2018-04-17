@@ -1,0 +1,49 @@
+<!--
+  Generated template for the PaymentSucessPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button icon-only class="button-logo"  (click)="dismiss()"> 
+         <ion-icon name='close'></ion-icon>
+      </button>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="pay">
+<div class="full-div">
+	<ion-icon name="checkmark-circle"></ion-icon>
+	<div class="text"><b>Success</b></div>
+</div>
+<div class="line"></div>
+<div class="full-div2">
+	<div class="Payment-detail">Payment Detail</div>
+	<div class="service">
+	  <span class="pull-left">Service name :</span>
+	  <span class="pull-right">{{service}}</span>
+	</div>
+	<div class="service">
+	<span class="pull-left">Order id :</span>
+	 <span class="pull-right">{{order_id}}</span>
+	</div>
+	<div class="service">
+	<span class="pull-left">Transaction id :</span>
+	 <span class="pull-right">{{transaction_id}}</span>
+	</div>
+	<div class="service">
+	<span class="pull-left">Transaction time :</span>
+	 <span class="pull-right">{{pay_date }} at {{pay_time}}</span>
+	</div>
+	<div class="service">
+	<span class="pull-left">Status :</span>
+	 <span class="pull-right">{{status}}</span>
+	</div>
+	<div class="service">
+	<span class="pull-left">Total Payment :</span>
+	 <span class="pull-right">${{total}}</span>
+	</div>
+</div>
+</ion-content>

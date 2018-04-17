@@ -1,0 +1,152 @@
+<!--
+  Generated template for the UserProfile page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button menuToggle icon-only class="button-logo">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title >PROFILE</ion-title>
+     <ion-buttons end  *ngIf="edit=='true'">
+            <button icon-only ion-button (click)="save_profile()">
+               <ion-icon name="checkmark-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<div *ngIf="edit!='true'">
+<!-- <div class="div-user-img">
+	  <div class="parent" *ngIf="salonname">
+	    <div class="circle">
+           <img src="{{image}}" class="img-logo" *ngIf="image"> 
+           <img src="assets/img/team-member2.jpg" class="img-logo" *ngIf="!image">
+        </div>
+        <span class="color_white">{{salonname}}</span>
+	</div>
+</div> -->
+<div class="img-div">
+  <img class="img-src" src="{{image}}" *ngIf="image">
+   <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" class="img-logo" *ngIf="!image">
+</div>
+<div class="edit-profile">
+  <div class="field">Salon Name-</div>
+  <div class="filed-data">{{salonname}}</div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Contact Number-</div>
+	<div class="filed-data">{{salonnumber}}</div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Email id-</div>
+	<div class="filed-data">{{salonemail}}</div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Address</div>
+	<div class="filed-data">{{address}}</div>
+</div>
+<div class="edit-profile">
+  <div class="field">Website</div>
+  <div class="filed-data">{{website}}</div>
+</div>
+<div class="edit-profile">
+  <div class="field">Schedule</div>
+  <div class="filed-data">{{schedule}}</div>
+</div>
+<div class="edit-profile">
+  <div class="field">About</div>
+  <div class="filed-data">{{about}}</div>
+</div>
+<!-- <div class="edit-profile">
+	<div class="field">Date of birth</div>
+	<div class="filed-data">22-03-1995</div>
+</div> -->
+<button ion-button block color="redcolor" class="btn-edit" (click)="edit_profile()">Edit Profile </button>
+</div>
+
+<div *ngIf="edit=='true'">
+<!-- <div class="div-user-img">
+	  <div class="parent">
+	    <div class="circle">
+	    <ion-icon name="create" class="edit_pen" (click)="presentActionSheet()"></ion-icon>
+           <img src="{{image}}"
+            (click)="presentActionSheet()" class="img-logo" *ngIf="image"> 
+             <img src="assets/img/team-member2.jpg" (click)="presentActionSheet()" class="img-logo"  *ngIf="!image">
+        </div>
+        <span class="color_white">  <ion-item class="item-input">
+    <ion-input type="text" placeholder="Full Name" [(ngModel)]="salonname"></ion-input>
+  </ion-item> </span>
+	</div>
+</div> -->
+
+<div class="img-div">
+  <img class="img-src" src="{{image}}" *ngIf="image" (click)="presentActionSheet()">
+   <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" class="img-logo" *ngIf="!image" (click)="presentActionSheet()">
+   <ion-icon name="create" class="edit_pen" (click)="presentActionSheet()"></ion-icon>
+</div>
+<div class="edit-profile">
+  <div class="field">Salon Name-</div>
+  <div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="tel" placeholder="Contact Number" [(ngModel)]="salonname"></ion-input>
+  </ion-item>
+  </div>
+</div>
+<div class="edit-profile">
+	<div class="field">Contact Number-</div>
+	<div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="tel" placeholder="Contact Number" [(ngModel)]="salonnumber"></ion-input>
+  </ion-item>
+  </div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Email id-</div>
+	<div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="email" placeholder="Email id" [(ngModel)]="salonemail" disabled></ion-input>
+  </ion-item></div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Address</div>
+	<div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="text" placeholder="Address" [(ngModel)]="address"></ion-input>
+  </ion-item></div>
+</div>
+<div class="edit-profile">
+  <div class="field">Website</div>
+  <div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="text" placeholder="Website" [(ngModel)]="website"></ion-input>
+  </ion-item></div>
+</div>
+<div class="edit-profile">
+  <div class="field">Schedule</div>
+  <div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="text" placeholder="Schedule" [(ngModel)]="schedule"></ion-input>
+  </ion-item></div>
+</div>
+<div class="edit-profile">
+  <div class="field">About</div>
+  <div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="text" placeholder="About" [(ngModel)]="about"></ion-input>
+  </ion-item></div>
+</div>
+
+<!-- <div class="edit-profile-bottom">
+	<div class="field">Date of birth</div>
+	<div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="text" placeholder="Date of birth"></ion-input>
+  </ion-item></div>
+</div> -->
+<!-- <button ion-button block color="redcolor" class="btn-edit" (click)="save_profile()">SAVE </button> -->
+</div>
+</ion-content>

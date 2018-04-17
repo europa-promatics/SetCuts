@@ -1,0 +1,159 @@
+<!--
+  Generated template for the UserAppointmentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button menuToggle icon-only class="button-logo">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>MY CUSTOMER</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content-appointment">
+
+  <ion-segment [(ngModel)]="Appointments">
+    <ion-segment-button value="UPCOMING">
+      UPCOMING
+    </ion-segment-button>
+    <ion-segment-button value="PAST">
+      PAST
+    </ion-segment-button>
+     <ion-segment-button value="CANCELLED">
+      CANCELLED
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+<div [ngSwitch]="Appointments">
+<div *ngSwitchCase="'UPCOMING'" >
+ <div *ngIf="upcomingAppointment==''  && currentAppontment==''" class="div-img">
+ <img src="http://18.220.97.146/barber/app_link/icon/indifferent.png" class="img-div">
+ <div class="text-img"><b>No upcoming appointment</b></div>
+ </div>
+
+<div *ngIf="currentAppontment">
+<div class="user-review"  *ngFor="let p of currentAppontment" >
+
+          <div class="inside-user">
+          
+             
+                 <img [src]='getSafeUrl(p.customer_image)'   *ngIf="p.customer_image!=null"/> 
+                  
+                 <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" *ngIf="p.customer_image==null">
+                 </div>
+          <div class="name" (click)="view_customer_profile(p.customer_id,p.customer_latitude,p.customer_longitude)"><a>{{p.customer_name}}</a> </div>
+          <div class="name">{{p.customer_address}}</div>
+          <div class="diff">
+            <div>
+              {{p.service}}  <span class="span-charge" *ngIf="this.role_right=='fullaccess'">${{p.charge}}</span>
+            </div>
+            <div>
+              {{p.date | date: 'dd'}}/{{p.date | date:'MM'}}/{{p.date | date: 'yyyy'}}  at {{p.time}}
+            </div>
+          </div>
+          <!-- <div class="btn-c-c">
+          <button ion-button  color="redcolor">confirm</button>
+            <button ion-button  color="redcolor">cancel</button>
+          </div> -->
+          </div>
+          </div>
+
+ <!-- upcoming -->
+  <div *ngIf="upcomingAppointment!=''">
+<div class="user-review"  *ngFor="let p of upcomingAppointment" >
+
+    			<div class="inside-user">
+          
+                <!--  <img src="http://18.220.97.146/barber/img/customerprofileimage/{{p.customer_image}}" *ngIf="p.customer_image!=null" />  -->
+                 <img [src]='getSafeUrl(p.customer_image)'   *ngIf="p.customer_image!=null"/> 
+                  
+                 <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" *ngIf="p.customer_image==null">
+                 </div>
+    			<div class="name" (click)="view_customer_profile(p.customer_id,p.customer_latitude,p.customer_longitude)"><a>{{p.customer_name}}</a> </div>
+    			<div class="name">{{p.customer_address}}</div>
+    			<div class="diff">
+    				<div>
+    					{{p.service}}  <span class="span-charge" *ngIf="this.role_right=='fullaccess'">${{p.charge}}</span>
+    				</div>
+    				<div>
+    					{{p.date | date: 'dd'}}/{{p.date | date:'MM'}}/{{p.date | date: 'yyyy'}}  at {{p.time}}
+    				</div>
+    			</div>
+    			<!-- <div class="btn-c-c">
+    			<button ion-button  color="redcolor">confirm</button>
+          	<button ion-button  color="redcolor">cancel</button>
+    			</div> -->
+    			</div>
+          </div>
+    			</div>
+    		</div>
+
+<div [ngSwitch]="Appointments">
+<div *ngSwitchCase="'PAST'" >
+ <div *ngIf="pastAppointment==''" class="div-img">
+ <img src="http://18.220.97.146/barber/app_link/icon/indifferent.png" class="img-div">
+ <div class="text-img"><b>No past appointment</b></div>
+ </div>
+ <div *ngIf="pastAppointment!=''">
+<div class="user-review"  *ngFor="let p of pastAppointment" >
+
+    			<div class="inside-user">
+               <img [src]='getSafeUrl(p.customer_image)'  *ngIf="p.customer_image!=null" /> 
+                 <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" *ngIf="p.customer_image==null">
+                  </div>
+    			<div class="name" (click)="view_customer_profile(p.customer_id)"><a>{{p.customer_name}} </a></div>
+    			<div class="name">{{p.customer_address}}</div>
+    			<div class="diff">
+    				<div>
+    					{{p.service}} <span class="span-charge" *ngIf="this.role_right=='fullaccess'">${{p.charge}}</span>
+    				</div>
+    				<div>
+    					{{p.date | date: 'dd'}}/{{p.date | date:'MM'}}/{{p.date | date: 'yyyy'}}  at {{p.time}}
+    				</div>
+    			</div>
+    			
+    			</div>
+          </div>
+    			</div>
+    		</div>
+
+
+<div [ngSwitch]="Appointments">
+<div *ngSwitchCase="'CANCELLED'" >
+ <div *ngIf="cancelAppointment==''" class="div-img">
+ <img src="http://18.220.97.146/barber/app_link/icon/indifferent.png" class="img-div">
+ <div class="text-img"><b>No cancel appointment</b></div>
+ </div>
+ <div *ngIf="cancelAppointment!=''">
+<div class="user-review"  *ngFor="let p of cancelAppointment" >
+
+    			<div class="inside-user">
+                 <img [src]='getSafeUrl(p.customer_image)'  *ngIf="p.customer_image!=null" /> 
+                 <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" *ngIf="p.customer_image==null">
+                 </div>
+    			<div class="name">{{p.customer_name}} </div>
+    			<div class="name">{{p.customer_address}}</div>
+    			<div class="diff">
+    				<div>
+    					{{p.service}} <span class="span-charge" *ngIf="this.role_right=='fullaccess'">${{p.charge}}</span>
+
+    				</div>
+    				<div>
+    					{{p.date | date: 'dd'}}/{{p.date | date:'MM'}}/{{p.date | date: 'yyyy'}}  at {{p.time}}
+    				</div>
+    			</div>
+    			
+    			</div>
+          </div>
+    			</div>
+    		</div>
+
+</ion-content>

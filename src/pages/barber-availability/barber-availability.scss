@@ -1,0 +1,67 @@
+page-barber-availability {
+		.content-about{
+		background:#fff;
+	}
+    .toolbar-background {
+        background: #2B2B2B;
+    }
+	.toolbar-title-md {
+	  background: #2b2b2b none repeat scroll 0 0;
+	  color: #fff;
+	  font-family: "OpenSans-Regular";
+	  font-size: 2rem;
+	  font-weight: 500;
+	  padding: 0 0px;
+	}
+    .toolbar-title-ios {
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 500;
+        pointer-events: auto;
+        font-family: 'OpenSans-Regular';
+        text-align: center;
+    }
+    
+.ion-md-menu::before {
+	  color: #fff;
+	  content: "";
+	}
+  .ion-md-arrow-back::before {
+  content: "";
+  color: #fff;
+}
+.ion-ios-arrow-back::before {
+  color: #fff;
+  content: "";
+  padding-left: 4px;
+}
+.back-button-text-ios {
+    color: #2b2b2b;
+    letter-spacing: -0.01em;
+}
+.item-md {
+    background-color: #fff;
+    box-shadow: none;
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: normal;
+    padding-left: 16px;
+    padding-right: 0;
+    position: relative;
+    text-transform: none;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+.label {
+  border-radius: 0.25em;
+  color: #000;
+  display: inline;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.2em 1.6em 0.3em;
+  text-align: left;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+}

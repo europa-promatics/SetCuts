@@ -1,0 +1,39 @@
+
+
+<ion-header>
+    <ion-navbar>
+        <ion-title>BARBER GALLERY</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="salon-content">
+    <div class="full-div" *ngIf="img0">
+
+        <img src="http://18.220.97.146/barber/img/barberpreviousworkimage/{{img0}}" >
+    </div>
+    <div class="full-div" *ngIf="!img0">
+        <img src="http://18.220.97.146/barber/img/barberpreviousworkimage/{{content_img}}" >
+    </div>
+    
+    <div class="full">
+        <div class="pull-left" *ngIf="img1"><img src="http://18.220.97.146/barber/img/barberpreviousworkimage/{{img1}}" >
+       
+        </div>
+        <div class="pull-right " *ngIf="img2"><img src="http://18.220.97.146/barber/img/barberpreviousworkimage/{{img2}}" >
+     <!--        <img src="assets/img/no-image-available.jpg" *ngIf="!img2"> -->
+        </div>
+    </div>
+    <div class="full-div-bottom" *ngIf="img3">
+        <img src="http://18.220.97.146/barber/img/barberpreviousworkimage/{{img3}}" >
+      <!--   <img src="assets/img/no-image-available.jpg" *ngIf="!img3"> -->
+    </div>
+
+    <div *ngIf="content_img">
+        <div class="full-div-extra" *ngFor="let p of content_img.split(',');let i=index">
+            <img src="http://18.220.97.146/barber/img/barberpreviousworkimage/{{p}}" *ngIf="i>3">
+        </div>
+    </div>
+</ion-content>
+<ion-footer class="footer-color">
+    <button ion-button block color="redcolor" class="m0" (click)="presentActionSheet()" >Upload Photos</button>
+</ion-footer>
+

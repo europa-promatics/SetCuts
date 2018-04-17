@@ -1,0 +1,443 @@
+
+<ion-header>
+    <ion-navbar>
+        <ion-title>BARBER PROFILE</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="user-barber-profile">
+    <div class="div-user-img">
+        <div class="parent">
+            <div class="circle">
+                <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" class="img-logo" *ngIf="!img"> 
+                <img src="http://18.220.97.146/barber/img/barberimage/{{img}}" class="img-logo" *ngIf="img"> 
+            </div>
+            <span class="color_white text-review" (click)="view()" *ngIf="review_count"><u>{{review_count}} reviews</u></span>
+            
+    </div>
+  
+    </div>
+   <!--   <div class="pull-right" (click)="rating()"> -->
+            <div class="pull-right" >
+             <ion-grid >
+          
+        <ion-row  class="row-col-extra" *ngIf="avgrating>=4.5 && avgrating<=5.0"  >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+         <ion-row  class="row-col-extra" *ngIf="avgrating>=4.0 && avgrating<4.5"  >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="avgrating>=3.5 && avgrating<4.0" class="row-col-extra">
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="avgrating>=3.0 && avgrating<3.5" class="row-col-extra">
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row  class="row-col-extra"*ngIf="avgrating>=2.5 && avgrating<3.0" >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row class="row-col-extra" *ngIf="avgrating>=2.0 && avgrating<2.5" >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row  class="row-col-extra" *ngIf="avgrating>=1.5 && avgrating<2.0" >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row  class="row-col-extra" *ngIf="avgrating>=1.0 && avgrating<1.5" >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+          <ion-row  class="row-col-extra" *ngIf="avgrating<1" >
+            <ion-col class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+
+    </ion-grid>
+
+        </div>
+  <div class="full-div-name">
+    <div class="div-name"><b>{{barbername}}</b></div>
+    <div class="div-btn-book">
+    <button ion-button small class="btn-booking" (click)="bookbarber()">BOOK ME</button></div>
+  </div>
+<!--     <div class="full-btn">
+     
+       <div class="pull-left barber-name"><b>{{barbername}}</b> 
+      </div>
+        <div class="pull-right" (click)="rating()">
+          
+             <ion-grid >
+          
+        <ion-row  class="row-col-extra" *ngIf="avgrating>=4.5 && avgrating<=5.0"  >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper" >
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+         </ion-row>
+         <ion-row  class="row-col-extra" *ngIf="avgrating>=4.0 && avgrating<4.5"  >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="avgrating>=3.5 && avgrating<4.0" class="row-col-extra">
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row *ngIf="avgrating>=3.0 && avgrating<3.5" class="row-col-extra">
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row  class="row-col-extra"*ngIf="avgrating>=2.5 && avgrating<3.0" >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row class="row-col-extra" *ngIf="avgrating>=2.0 && avgrating<2.5" >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row  class="row-col-extra" *ngIf="avgrating>=1.5 && avgrating<2.0" >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+          <ion-row  class="row-col-extra" *ngIf="avgrating>=1.0 && avgrating<1.5" >
+            <ion-col class="star-upper">
+               <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+          <ion-row  class="row-col-extra" *ngIf="avgrating<1" >
+            <ion-col class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col  class="star-upper1">
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="star-upper1" >
+               <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+         </ion-row>
+
+
+    </ion-grid>
+
+        </div>
+    </div> -->
+        <!-- <div class="btn-booking-div">
+            <button ion-button class="btn-booking" (click)="bookbarber()">BOOK ME</button>
+        </div> -->
+    <ion-card class="card-div" *ngIf="showcard=='true'">
+        <ion-card-header>
+            <span class="pull-left"> Review & Rating</span>
+            <span class="pull-right-rate" (click)="close_rating()">
+                <ion-icon name="close-circle"></ion-icon>
+            </span>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-row class="row-div">
+                <ion-col  class="col-div" >
+                    <ion-icon name="star-outline" class="star-col" (click)="add(1)" *ngIf="first!='true'"></ion-icon>
+                    <ion-icon name="star" class="star-col-active" (click)="sub(1)" *ngIf="first=='true'"></ion-icon>
+                </ion-col>
+                <ion-col class="col-div" >
+                    <ion-icon name="star-outline" class="star-col"  (click)="add(2)" *ngIf="second!='true'"></ion-icon>
+                    <ion-icon name="star" class="star-col-active"  (click)="sub(2)" *ngIf="second=='true'"></ion-icon>
+                </ion-col>
+                <ion-col  class="col-div" >
+                    <ion-icon name="star-outline" class="star-col"  (click)="add(3)" *ngIf="third!='true'"></ion-icon>
+                    <ion-icon name="star" class="star-col-active"  (click)="sub(3)" *ngIf="third=='true'"></ion-icon>
+                </ion-col>
+                <ion-col  class="col-div"  >
+                    <ion-icon name="star-outline" class="star-col" (click)="add(4)" *ngIf="forth!='true'"></ion-icon>
+                    <ion-icon name="star" class="star-col-active"  (click)="sub(4)" *ngIf="forth=='true'"></ion-icon>
+                </ion-col>
+                <ion-col  class="col-div"  >
+                    <ion-icon name="star-outline" class="star-col" (click)="add(5)" *ngIf="fifth!='true'"></ion-icon>
+                    <ion-icon name="star" class="star-col-active"  (click)="sub(5)" *ngIf="fifth=='true'"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <textarea class="textarea-data" placeholder="Reviews..." rows="5" cols="26" [(ngModel)]="rating_text"></textarea>
+            <button ion-button block class="btn-div" (click)="submit_rating()">Submit</button>
+        </ion-card-content>
+    </ion-card>
+
+    <div class="edit-profile1">
+        <div class="field">PAST HAIRCUTS (IMAGES)</div>
+    </div>
+    <div class="img-slide-tag">
+
+
+        <ion-item  no-padding  class="item-img-slide">
+          
+            <div style="width:100%;overflow-x:scroll;overflow-y: hidden;" >
+            <div *ngIf="!barberpreviuswork">
+                <div class="div-images" *ngFor="let img of imagedata;let i=index"  >
+                    <img src="{{img.image_name}}" (click)="img1(img.image_name,2,imagedata,i)" class="footer-img-slider" >
+                </div>
+</div>
+<div *ngIf="barberpreviuswork">
+                 <div class="div-images" *ngFor="let img of barberpreviuswork.split(',');let i=index"  >
+                    <img src="http://18.220.97.146/barber/img/barberpreviousworkimage/{{img}}" (click)="img1(img,1,barberpreviuswork,i)" class="footer-img-slider" >
+                </div>
+            </div>
+         </div>
+        </ion-item>
+    </div>
+     <div class="edit-profile1">
+        <div class="field">ABOUT ME</div>
+        <div class="filed-data">{{about_barber}}</div>
+    </div>
+
+    <div class="edit-profile1">
+        <div class="field"> <ion-icon name="logo-instagram"></ion-icon> MY INSTAGRAM</div>
+        <div class="filed-data" (click)="share_instagram()"><a>{{instagram}}</a></div>
+    </div>
+    <!-- <div class="btn-clear">
+    <button ion-button clear (click)="share_instagram()">
+    <ion-icon name="logo-instagram"></ion-icon> Share on Instagram</button>
+    </div> -->
+ 
+</ion-content>
+
+<!-- <ion-footer>
+  <button ion-button block color="redcolor" (click)="book_friend()">BOOK FOR A FRIEND</button>
+</ion-footer> -->

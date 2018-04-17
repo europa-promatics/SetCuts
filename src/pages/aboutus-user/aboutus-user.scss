@@ -1,0 +1,76 @@
+page-aboutus-user {
+	.content-about{
+		background:#fff;
+	}
+    .toolbar-background {
+        background: #2B2B2B;
+    }
+
+    .toolbar-title-ios {
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 500;
+        pointer-events: auto;
+        font-family: 'OpenSans-Regular';
+      
+        text-align: center;
+    }
+
+.ion-md-arrow-back::before {
+    color: #fff;
+    content: "";
+}
+
+.ion-ios-arrow-back::before {
+    color: #fff;
+    content: "";
+}
+    .ion-ios-menu::before {
+    color: #fff;
+    content: "";
+}
+ 
+.back-button-text-ios {
+    color: #2b2b2b;
+    letter-spacing: -0.01em;
+}
+
+   .ion-md-menu::before {
+	  color: #fff;
+	  content: "";
+	}
+
+	.about-li {
+	  	float: left;
+		padding: 15px 10px;
+		width: 100%;
+		border-bottom: 1px solid #4f4f4f;
+	}
+ .img-content {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 100px;
+  float: left;
+  height: 90px;
+  line-height: 6;
+  padding: 0px;
+  text-align: center;
+  width: 90px;
+}
+	.img-content img{
+		width:100%;
+		max-width: 80px;
+	}
+	.spancals {
+	  	margin-left: 33%;
+		margin-top: 12%;
+		color: #131446;
+	}
+.ion-ios-arrow-forward::before {
+    color: #131446;
+    content: "";
+}
+.ion-md-arrow-forward::before {
+    color: #131446;
+    content: "";
+}
+}

@@ -1,0 +1,285 @@
+page-barber-home {
+.content-about{
+		background:#222;
+	}
+  .status-label.label {
+    border-radius: 0.25em;
+    color: #fff;
+    display: inline;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0.2em 0.6em 0.3em 25px;
+    text-align: left;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.status-item.item-md {
+  background-color: #222;
+  box-shadow: none;
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: normal;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  text-transform: none;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+.status-item.item-ios {
+  background-color: #222;
+  box-shadow: none;
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: normal;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  text-transform: none;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+.upper-div {
+  background: #222 none repeat scroll 0 0;
+}
+
+  ion-spinner {
+  display: list-item;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 100%;
+}
+.item-md .toggle-md {
+  cursor: pointer;
+  margin: 0;
+  padding: 12px 8px 12px 16px;
+}
+.item-ios .toggle-ios {
+  cursor: pointer;
+  margin: 0;
+  padding: 12px 8px 12px 16px;
+}
+.toggle-md {
+  box-sizing: content-box;
+  height: 14px;
+  padding: 12px;
+  position: relative;
+  width: 36px;
+}
+.toggle-ios {
+  box-sizing: content-box;
+  height: 14px;
+  padding: 12px;
+  position: relative;
+  width: 36px;
+}
+.toggle-md .toggle-icon {
+    background-color: #dedede;
+    border-radius: 14px;
+    display: block;
+    height: 100%;
+    pointer-events: none;
+    position: relative;
+    transition: background-color 300ms ease 0s;
+    width: 100%;
+}
+.toggle-ios .toggle-icon {
+    background-color: #dedede;
+    border-radius: 14px;
+    display: block;
+    height: 100%;
+    pointer-events: none;
+    position: relative;
+    transition: background-color 300ms ease 0s;
+    width: 100%;
+}
+.toggle-md .toggle-inner {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: -3px;
+  transition-duration: 300ms;
+  transition-property: transform, background-color, -webkit-transform;
+  width: 20px;
+  will-change: transform, background-color;
+}
+.toggle-ios .toggle-inner {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: -3px;
+  transition-duration: 300ms;
+  transition-property: transform, background-color, -webkit-transform;
+  width: 20px;
+  will-change: transform, background-color;
+}
+.toggle-md.toggle-checked .toggle-icon {
+  background-color: #32db64;
+}
+.toggle-ios.toggle-checked .toggle-icon {
+  background-color: #32db64;
+}
+.toggle-md.toggle-checked .toggle-inner {
+  background-color: #fff;
+  transform: translate3d(16px, 0px, 0px);
+}
+.toggle-ios.toggle-checked .toggle-inner {
+  background-color: #fff;
+  transform: translate3d(16px, 0px, 0px);
+}
+    .toolbar-background {
+        background: #2B2B2B;
+    }
+ .toolbar-title-md {
+  background: #2b2b2b none repeat scroll 0 0;
+  color: #fff;
+  font-family: "OpenSans-Regular";
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+.user1{
+  background: #d5d5d5;
+}
+.user0{
+  background: #fff;
+}
+.span-item {
+  background-color: red;
+  border: 1px solid #333;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 10px;
+  height: 19px;
+  line-height: 17px;
+  position: absolute;
+  right: 9px;
+  text-align: center;
+  top: -1px;
+  width: 19px;
+  z-index: 0;
+}
+.ion-md-notifications::before {
+    color: #fff;
+    content: "";
+    font-size: 30px;
+}
+    .toolbar-title-ios {
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 500;
+        pointer-events: auto;
+        font-family: 'OpenSans-Regular';
+        text-align: center;
+    }
+    .bar-buttons-ios[end] {
+    order: 5;
+    padding-right: 12px;
+    text-align: end;
+    color: #fff;
+}
+.ion-ios-arrow-back::before {
+  color: #fff;
+  content: "";
+  padding-left: 4px;
+}
+.back-button-text-ios {
+    color: #2b2b2b;
+    letter-spacing: -0.01em;
+}
+
+.ion-ios-notifications::before {
+    color: #fff;
+    content: "";
+}
+.bar-buttons-md[end] {
+    order: 5;
+    padding-right: 12px;
+    text-align: end;
+    color: #fff;
+}
+  .ion-md-arrow-back::before {
+    color: #fff;
+    content: "";
+}
+.ion-md-menu::before {
+    color: #fff;
+    content: "";
+}
+
+.ion-ios-menu::before {
+    color: #fff;
+    content: "";
+}
+.grid {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    width: 100%;
+}
+.h6 {
+  color: #fff;
+  font-family: "OpenSans-Regular";
+  font-size: 10px;
+  text-align: center;
+  width: 100%;
+}
+.col {
+  border: 0.55px solid #2b2b2b;
+  flex-basis: 0;
+  flex-grow: 1;
+  height: 118px;
+  margin: 0;
+  max-width: 100%;
+  min-height: 1px;
+  padding: 5px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+img {
+    border: 0 none;
+    max-width: 30%;
+    padding-top: 15px;
+    width: 100%;
+}
+.a{
+  background: #c72228;
+}
+@media screen and (min-width:400px)
+  {
+   img {
+    border: 0 none;
+    max-width: 10%;
+    padding-top: 15px;
+    width: 100%;
+}
+  }
+
+  .text-upload{
+    text-align: center;
+    color: #c72228;
+  }
+  .col.col-img {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 0;
+    max-width: 100%;
+    min-height: 1px;
+    padding: 6;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+}

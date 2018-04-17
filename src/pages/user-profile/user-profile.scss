@@ -1,0 +1,181 @@
+page-user-profile {
+.toolbar-background-md {
+    background: #2b2b2b none repeat scroll 0 0;
+}
+.ion-md-menu::before {
+    color: #fff;
+    content: "";
+}
+.toolbar-background {
+    background: #2B2B2B;
+}
+.toolbar-title-ios {
+    font-size: 1.7rem;
+    font-weight: 500;
+    pointer-events: auto;
+       font-family: 'OpenSans-Regular';
+
+}
+ .toolbar-title-md.title-edit {
+  background: #2b2b2b none repeat scroll 0 0;
+  color: #fff;
+  font-family: "OpenSans-Regular";
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 0 0px;
+}
+.toolbar-title-ios {
+    color: #fff;
+    font-family: "OpenSans-Regular";
+    font-size: 1.7rem;
+    font-weight: 500;
+    pointer-events: auto;
+}
+.ion-ios-arrow-back::before {
+  color: #fff;
+  content: "";
+  padding-left: 4px;
+}
+.back-button-text-ios {
+    color: #2b2b2b;
+    letter-spacing: -0.01em;
+}
+
+
+.ion-md-arrow-back::before {
+    color: #fff;
+    content: "";
+}
+.div-user-img {
+	background: #fff none repeat scroll 0 0;
+	height: 170px;
+	width: 100%;
+}
+.bar-button-ios[icon-only] {
+    color: #fff;
+    min-width: 0.9em;
+    padding: 0;
+}
+.parent {
+      background: transparent none repeat scroll 0 0;
+    float: left;
+    margin-left: 5%;
+    margin-top: 25px;
+    position: absolute;
+    width: 100%;
+}
+
+.middle{
+	display: table-cell; 
+    vertical-align: middle;
+}
+
+ .circle {
+    display: inline-block;
+    position: relative;
+    margin-right: 5%;
+    max-width: 100px;
+    text-align: left;
+    width: 100%;
+}
+.edit_pen {
+  background: #000 none repeat scroll 0 0;
+  display: inline-block;
+  font-size: 1.2em;
+  height: 23px;
+  position: absolute;
+  top: 70px;
+  width: 23px;
+  border-radius: 100%;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  left: 75px;
+}
+.img-logo {
+  border-radius: 100%;
+  display: inline-block;
+  height: 150px;
+  max-height: 100px;
+  object-fit: cover;
+  width: 150px;
+}
+.color_white{
+	font-size:20px;
+	color:#000;
+	font-family:'OpenSans-Regular';
+}
+.edit-profile {
+  background: #fff none repeat scroll 0 0;
+  float: left;
+  width: 100%;
+
+}
+.field{
+  border-bottom:1px solid #b7b7b7;
+  color:#000;
+ font-family:'OpenSans-Bold';
+ text-transform: uppercase;
+  padding:10px;
+
+}
+.item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: transparent!important;
+  box-shadow: none !important;
+}
+.filed-data-save {
+    color: #000;
+    font-family: "OpenSans-Regular";
+    padding: 0;
+}
+ .filed-data {
+  color: #000;
+  font-family: "OpenSans-Regular";
+  padding: 12px 0 12px 20px;
+}
+ .edit-profile-bottom {
+  background: #fff none repeat scroll 0 0;
+  float: left;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.btn-edit {
+  background: #c72228 none repeat scroll 0 0;
+  color: #fff;
+  font-family: "OpenSans-Regular";
+  margin: 0 auto 26px;
+  width: 85%;
+}
+.item-input{
+  background: #2B2B2B none repeat scroll 0 0;
+  border-radius: 0;
+  color: #fff;
+  float: right;
+  font-size: 1.7rem;
+  margin-right: 20px;
+  padding-bottom: 0;
+  padding-left: 2px;
+  padding-top: 0;
+  position: relative;
+  top: 25px;
+  transition: background-color 200ms linear 0s;
+  width: 55%;
+}
+ .item-input-full {
+  background: #2B2B2B none repeat scroll 0 0;
+  border-radius: 0;
+  color: #fff;
+  font-size: 1.7rem;
+  margin: 0 20px 26px auto;
+  padding-bottom: 0;
+  padding-left: 2px;
+  padding-top: 0;
+  position: relative;
+  width: 85%;
+}
+.ion-md-checkmark-circle::before {
+    color: #fff;
+    content: "";
+    font-size: 32px;
+}
+}

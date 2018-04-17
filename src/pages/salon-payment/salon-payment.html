@@ -1,0 +1,44 @@
+<!--
+  Generated template for the PayemntUserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button menuToggle icon-only class="button-logo">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>PAYMENTS INFO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content-pay">
+
+
+<div class="user-review"  *ngFor="let p of salonpaymentList" >
+
+    			<div class="inside-user"> <img [src]='getSafeUrl(p.customer_image)' *ngIf="p.customer_image!=null" />
+          <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" *ngIf="p.customer_image==null"/> </div>
+    			<div class="name" *ngIf="p.customer_name!=null">{{p.customer_name}} </div>
+          <div class="name" *ngIf="p.customer_name==null">username </div>
+    			<div class="name"> {{p.date | date: 'dd'}}/{{p.date | date:'MM'}}/{{p.date | date: 'yyyy'}}  at {{p.time}}</div>
+    			<div class="diff">
+    				<div>
+    					ORDER NO. {{p.booking_id}}
+    				</div>
+    				<div> {{p.service}}  </div>
+    			</div>
+    			<div class="pull-right">
+          
+    				<button ion-button small  class="suc" *ngIf="p.stripe_payment_status==1">success</button>
+              <button ion-button small  class="can" *ngIf="p.stripe_payment_status==0">cancel</button>
+              <!--  <button ion-button small  class="can" *ngIf="p.payment_status_admin==2">cencel</button> -->
+         
+    			</div>
+    			</div>
+    		
+</ion-content>

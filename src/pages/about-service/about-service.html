@@ -1,0 +1,26 @@
+ 
+
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle icon-only class="button-logo">
+            <ion-icon name='menu'></ion-icon>
+        </button>
+        <ion-title>SERVICES</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="content-about">
+<div *ngIf="fulldata">
+    <div class="responsive-rectangle">
+        <div class="image-wrapper">
+            <img src="http://18.220.97.146/barber/img/aboutusimage/{{fulldata.aboutus_image}}" alt="">
+        </div>
+    </div>
+    <div class="inside-item-top"> SERVICES
+    </div>
+    <div class="item-data" *ngFor="let item of items;let i=index">
+        <div class="inside-item"> {{ item.service }}
+        </div>
+    </div>
+    </div>
+</ion-content>
+

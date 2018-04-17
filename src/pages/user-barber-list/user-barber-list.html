@@ -1,0 +1,43 @@
+<!--
+  Generated template for the UserBarberList page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- 189d0e -->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Barber List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <div *ngIf="nobarber=='true'" class="div-img">
+        <img src="http://18.220.97.146/barber/app_link/icon/indifferent1.png" class="img-div">
+        <div class="text-img"><b>No barber list found</b></div>
+    </div>
+    <div *ngIf="nobarber!='true'">
+        <div *ngFor="let barber of posts let i=index">
+            <div class="user-review" >
+                <div class="inside-user"> 
+                      <img class="img-obj" src="http://18.220.97.146/barber/img/barberimage/{{barber.barber_image}}" *ngIf="barber.barber_image" >
+                      <img class="img-obj" src="http://18.220.97.146/barber/app_link/icon/team-member2.jpg"  *ngIf="!barber.barber_image">
+                </div>
+                <div class="full-data">
+                    <div class="left">
+                        {{barber.fullname}}
+                    </div>
+                    <div class="right">
+                        <button ion-button small color="redcolor" class="btn-view" (click)="viewBarberProfile(barber)">View Profile</button>
+                    </div>
+                    <div class="service">
+                        <i>Services:{{barber.service}}</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

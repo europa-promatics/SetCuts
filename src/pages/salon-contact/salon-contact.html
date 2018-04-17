@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ContactUsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button menuToggle icon-only class="button-logo">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>CONTACT US </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="contact-content">
+<div class="full-div">We are happy to hear from you.</div>
+<form [formGroup]="contactform">
+<ion-list>
+
+  <ion-item class="item-input" no-lines>
+    <ion-input type="text" placeholder="Name" placeholder="Name" formControlName="name" [(ngModel)]="name"></ion-input>
+   
+  </ion-item>
+ <p style="color:#fff"  *ngIf="!contactform.controls.name.valid && (contactform.controls.name.dirty )"> input field required.</p>
+  <ion-item class="item-input" no-lines>
+    <ion-input type="email" placeholder="Email ID" formControlName="email" [(ngModel)]="email"></ion-input>
+
+  </ion-item>
+    <p style="color:#fff"  *ngIf="!contactform.controls.email.valid && (contactform.controls.email.dirty )"> Invalid Email </p>
+   <ion-item class="item-input-phone" no-lines>
+    <ion-input type="tel"    placeholder="+123" formControlName="countrycode" [(ngModel)]="countrycode"></ion-input>
+  </ion-item>
+   <ion-item class="item-input-phone1" no-lines>
+    <ion-input type="tel" placeholder="Contact number" formControlName="number"[(ngModel)]="number"></ion-input>
+  </ion-item>
+
+    <ion-item class="item-input" no-lines>
+    <ion-input type="text"  placeholder="Message Title" formControlName="title"  [(ngModel)]="title"></ion-input>
+    
+  </ion-item>
+<p style="color:#fff"  *ngIf="!contactform.controls.title.valid && (contactform.controls.title.dirty )"> input field required.</p>
+   
+    
+    <textarea class="textarea-text" placeholder="Your Message"  formControlName="message" [(ngModel)]="message"></textarea>
+    <p style="color:#fff"  *ngIf="!contactform.controls.message.valid && (contactform.controls.message.dirty )">input field required.</p>
+ 
+<button ion-button block class="btn-send" color="redcolor" [disabled]="!contactform.valid" (click)="saloncontact()">SEND</button>
+</ion-list>
+</form>
+</ion-content>

@@ -1,0 +1,52 @@
+<!--
+  Generated template for the TermsOfservicePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button menuToggle icon-only class="button-logo">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>TERMS OF SERVICES</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content-about" >
+<ion-spinner name="dots" color="redcolor" *ngIf="!termsofservice"></ion-spinner>
+<ion-segment [(ngModel)]="relationship" (ionChange)="selectedtab()">
+        <ion-segment-button value="Terms">
+            Terms of services
+        </ion-segment-button>
+        <ion-segment-button value="Privacy">
+            Privacy policy
+        </ion-segment-button>
+        </ion-segment>
+
+         <div [ngSwitch]="relationship" >
+
+            <div  *ngSwitchCase="'Terms'">
+             
+<!-- <div class="full-btn">HEADING1</div> -->
+<h4>{{heading}}</h4>
+<div class="full-text" padding>{{content}}</div>
+
+    </div>
+    </div>
+
+
+ <div [ngSwitch]="relationship" >
+
+            <div  *ngSwitchCase="'Privacy'">
+             
+<!-- <div class="full-btn">HEADING1</div> -->
+<h4>{{policyTitle}}</h4>
+<div class="full-text" padding>{{policydescription}}</div>
+
+    </div>
+    </div>
+</ion-content>

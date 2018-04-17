@@ -1,0 +1,247 @@
+<!--
+  Generated template for the SalonBarberProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only class="button-logo">
+        <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>SHOP’S PROFILE</ion-title>
+        <ion-buttons end  *ngIf="edit=='true'">
+            <button icon-only ion-button (click)="save_profile()">
+               <ion-icon name="checkmark-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+
+
+<div *ngIf="edit!='true'">
+<div class="div-user-img">
+	  <div class="parent">
+	    <div class="circle">
+           <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" class="img-logo" *ngIf="barber_image==null"> 
+           <img src="{{barber_image}}" class="img-logo" *ngIf="barber_image!=null">
+        </div>
+        <span class="color_white"> {{fullname}} </span>
+	</div>
+</div>
+<div class="edit-profile">
+	<div class="field">Contact Number-</div>
+	<div class="filed-data">{{phonenumber}}</div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Email id-</div>
+	<div class="filed-data">{{email}}</div>
+</div>
+
+<!-- <div class="edit-profile">
+	<div class="field">Address</div>
+	<div class="filed-data">32 Yarrow terrace, hawick TD9, 9LL, UK</div>
+</div> -->
+
+<!-- <div class="edit-profile">
+	<div class="field">SERVICE</div>
+	<div class="filed-data">{{service}}</div>
+</div> -->
+<!-- <div class="edit-profile">
+	<div class="field">SALON NAME </div>
+	<div class="filed-data">{{salonname}}</div>
+</div> -->
+
+<div class="edit-profile">
+  <div class="field">About me</div>
+  <div class="filed-data">{{about_barber}}</div>
+</div>
+
+<div class="edit-profile">
+  <div class="field">My Instagram</div>
+  <div class="filed-data">{{instagram}}</div>
+</div>
+
+<!-- <button ion-button block color="redcolor" class="btn-edit" (click)="edit_profile()" *ngIf="usertype==2">Edit Profile </button>
+</div> -->
+<button ion-button block color="redcolor" class="btn-edit" (click)="edit_profile()" >Edit Profile </button>
+</div>
+
+<div *ngIf="edit=='true'">
+<div class="div-user-img">
+	  <div class="parent">
+	    <div class="circle">
+	    <ion-icon name="create" class="edit_pen" (click)="presentActionSheet()"></ion-icon>
+            <img src="http://18.220.97.146/barber/app_link/img/team-member2.jpg" class="img-logo" (click)="presentActionSheet()" *ngIf="barber_image==null"> 
+           <img src="{{barber_image}}" 
+           (click)="presentActionSheet()" class="img-logo" *ngIf="barber_image!=null">
+        </div>
+        <span class="color_white">  <ion-item class="item-input">
+    <ion-input type="text" placeholder="Full Name" [(ngModel)]="fullname"></ion-input>
+  </ion-item> </span>
+	</div>
+</div>
+<div class="edit-profile">
+	<div class="field">Contact Number-</div>
+	<div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="tel" placeholder="Contact Number" [(ngModel)]="phonenumber"></ion-input>
+  </ion-item>
+  </div>
+</div>
+
+<div class="edit-profile">
+	<div class="field">Email id-</div>
+	<div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="email" placeholder="Email id" [(ngModel)]="email" disabled></ion-input>
+  </ion-item></div>
+</div>
+
+<!-- <div class="edit-profile">
+	<div class="field">Service</div>
+	<div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="text" placeholder="Email id" [(ngModel)]="service"></ion-input>
+  </ion-item></div>
+</div> -->
+<!-- <div class="edit-profile">
+<div class="field">Services </div>
+<div class="services">
+
+  <ion-item no-lines class="item-input-full"> 
+    <ion-label class="service-label">Select Services</ion-label>
+    <ion-select [(ngModel)]="toppings" multiple="true" cancelText="Cancel" okText="Ok">
+    <div *ngFor="let item of items">  
+      <ion-option [value]="item.salon_service" >{{item.salon_service}}</ion-option>
+    </div>
+
+    </ion-select>
+  </ion-item>
+  </div>
+</div> -->
+
+<div class="edit-profile">
+  <div class="field">About me-</div>
+  <div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="text" placeholder="About me" [(ngModel)]="about_barber"></ion-input>
+  </ion-item>
+  </div>
+</div>
+
+<div class="edit-profile">
+  <div class="field">My Instagram-</div>
+  <div class="filed-data-save"><ion-item class="item-input-full">
+    <ion-input type="text" placeholder="My Instagram Link" [(ngModel)]="instagram"></ion-input>
+  </ion-item>
+  </div>
+</div>
+
+<!-- <div class="edit-profile">
+	<div class="field">SALON NAME </div>
+	<div class="filed-data-save">
+  <ion-item class="item-input-full">
+    <ion-input type="text" placeholder="salon name" [(ngModel)]="salonname"></ion-input>
+  </ion-item></div>
+</div> -->
+
+</div>
+
+<!-- Past Pictures upload -->
+
+<div class="text-upload">Upload pictures past haircuts</div>
+<div *ngIf="edit=='true'">
+    <ion-row>
+        <ion-col class="col-img" (click)="presentActionSheet1()" *ngIf="!pic1">
+            <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev">
+        </ion-col>
+
+        <ion-col class="col-img" (click)="presentActionSheet1()" *ngIf="pic1">
+            <img src="{{pic1}}" alt=""  class="img-prev">
+        </ion-col>
+
+        <ion-col class="col-img" (click)="presentActionSheet2()" *ngIf="!pic2">
+            <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev">
+        </ion-col>
+
+        <ion-col class="col-img" (click)="presentActionSheet2()" *ngIf="pic2">
+            <img src="{{pic2}}" alt=""  class="img-prev">
+        </ion-col>
+
+        <ion-col class="col-img" (click)="presentActionSheet3()" *ngIf="!pic3">
+            <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev">
+        </ion-col>
+
+        <ion-col class="col-img" (click)="presentActionSheet3()" *ngIf="pic3">
+            <img src="{{pic3}}" alt=""  class="img-prev">
+        </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+        <ion-col class="col-img" (click)="presentActionSheet4()" *ngIf="!pic4">
+            <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev">
+        </ion-col>
+        <ion-col class="col-img" (click)="presentActionSheet4()" *ngIf="pic4">
+            <img src="{{pic4}}" alt=""  class="img-prev">
+        </ion-col>
+        <ion-col class="col-img" (click)="presentActionSheet5()" *ngIf="!pic5">
+            <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev">
+        </ion-col>
+        <ion-col class="col-img" (click)="presentActionSheet5()" *ngIf="pic5">
+            <img src="{{pic5}}" alt=""  class="img-prev">
+        </ion-col>
+        <ion-col class="col-img" >
+    
+        </ion-col>
+    </ion-row>
+</div>
+
+<div *ngIf="edit!='true'">
+        <ion-row>
+            <ion-col class="col-img"  *ngIf="!pic1">
+                <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev">
+            </ion-col>
+
+            <ion-col class="col-img"  *ngIf="pic1">
+                <img src="{{pic1}}" alt=""  class="img-prev">
+            </ion-col>
+
+            <ion-col class="col-img"  *ngIf="!pic2">
+                <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev">
+            </ion-col>
+
+            <ion-col class="col-img"  *ngIf="pic2">
+                <img src="{{pic2}}" alt=""  class="img-prev">
+            </ion-col>
+
+            <ion-col class="col-img"  *ngIf="!pic3">
+                <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev">
+            </ion-col>
+
+            <ion-col class="col-img"  *ngIf="pic3">
+                <img src="{{pic3}}" alt=""  class="img-prev">
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+            <ion-col class="col-img"  *ngIf="!pic4">
+                <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev">
+            </ion-col>
+            <ion-col class="col-img"  *ngIf="pic4">
+                <img src="{{pic4}}" alt=""  class="img-prev">
+            </ion-col>
+            <ion-col class="col-img"  *ngIf="!pic5">
+                <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev">
+            </ion-col>
+            <ion-col class="col-img"  *ngIf="pic5">
+                <img src="{{pic5}}" alt=""  class="img-prev">
+            </ion-col>
+            <ion-col class="col-img" >
+        
+            </ion-col>
+        </ion-row>
+</div>
+</ion-content>

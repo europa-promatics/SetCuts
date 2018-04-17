@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+  <button ion-button menuToggle icon-only class="button-logo">
+         <ion-icon name='menu'></ion-icon>
+      </button>
+    <ion-title>Order history</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-history all">
+<ion-card *ngFor="let a of history">
+  <ion-card-header>
+    <span class="pull-left all"><b>Order no. </b>{{a.booking_id}}</span>
+    <span class="pull-right " style="color: #222;font-size: 13px">{{a.date_of_payment | date: 'dd'}}/{{a.date_of_payment | date:'MM'}}/{{a.date_of_payment | date: 'yyyy'}}</span>
+  </ion-card-header>
+  <ion-card-content>
+  <div class="all">{{a.customer.fullname}}</div>
+  <div class="all"><a>{{a.customer.email}}</a></div>
+  <div  class="all"*ngIf="a.balance_transaction">Transaction id:{{a.balance_transaction}}</div>
+   Service: <b>{{a.servicename}}</b>. <span class="pull-right all"> 
+   <!-- <b>${{total(a.receiverList_receiver0_amount,a.receiverList_receiver1_amount)}}</b> -->
+   <b>${{a.amount}}</b>
+</span>
+<div style="color: #222" class="all"  *ngIf="a.stripe_payment_status==1">Your order is <b style="color:#5BC250">Complete</b></div>
+<div style="color: #222"  class="all"*ngIf="a.stripe_payment_status==0">Your order is <b style="color: #c72228">failed</b></div>
+<div></div>
+  </ion-card-content>
+</ion-card>
+</ion-content>

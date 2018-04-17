@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar >
+
+<button ion-button menuToggle icon-only class="button-logo">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title >BOOKING FORM</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="back"  padding >
+     <ion-list>
+   <!--    <ion-item no-lines>
+      <ion-input type="text" placeholder="Full name" ></ion-input>
+      </ion-item>
+
+     <ion-item no-lines>
+      <ion-input  type="email"  placeholder="Email Address"></ion-input>
+      </ion-item> -->
+
+     
+
+
+
+
+   <!--  <ion-list radio-group>
+
+    <ion-item no-lines class="left-radio">
+    <ion-label>Male</ion-label>
+    <ion-radio value="male" item-left color="redcolor"></ion-radio>
+    </ion-item>
+
+    <ion-item no-lines class="right-radio">
+    <ion-label>Female</ion-label>
+    <ion-radio value="female" item-left color="redcolor"></ion-radio>
+    </ion-item>
+
+
+    </ion-list> -->
+
+
+          <ion-item no-lines>
+         <ion-input  type="tel"  placeholder="Contact Number" [(ngModel)]="contact"></ion-input>
+         </ion-item>
+
+         <ion-item class="areatext" no-lines>
+         <ion-textarea rows="5" placeholder="Address" [(ngModel)]="address"></ion-textarea>
+         </ion-item>
+
+
+         <ion-item no-lines>
+         <ion-input  type="tel"  placeholder="Pincode" [(ngModel)]="pincode"></ion-input>
+         </ion-item>
+
+        <!--   <ion-item>
+            <ion-label  class="label-style">Hair Style</ion-label>
+            <ion-select [(ngModel)]="style" multiple="true" cancelText="cancel" okText="yes">
+             <ion-option value="Cutting">Cutting</ion-option>
+                <ion-option   value="Trimming">Trimming</ion-option>
+                <ion-option   value="Eye brow shaping">Eye brow shaping</ion-option>
+            </ion-select>
+          </ion-item> -->
+
+
+        
+    </ion-list>
+    <button ion-button color="redcolor" block (click)="PickbookingDate()">SUBMIT</button>
+</ion-content>

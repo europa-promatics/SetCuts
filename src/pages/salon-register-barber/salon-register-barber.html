@@ -1,0 +1,109 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Barber</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class="content-about">
+<div class="img-div"   style="background-image: url('http://18.220.97.146/barber/app_link/img/salon.jpg'); background-size: 62% auto;" >
+  <img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" class="img-logo" (click)="profileActionSheet()" *ngIf="!profilepic">
+   <img src="{{profilepic}}" class="img-logo" (click)="profileActionSheet()" *ngIf="profilepic">
+  <div class="text-upload" (click)="profileActionSheet()"><b>Upload Profile image</b></div>
+</div>
+
+
+<!-- Past Pictures upload -->
+
+<div class="text-upload">Upload pictures past haircuts</div>
+<div>
+
+
+       <!--   <ul class="list-inline" >
+            <li (click)="presentActionSheet()" *ngIf="!pic"><img src="assets/img/no_image_startup.png" alt="" class="img-prev"></li>
+            <li (click)="presentActionSheet()" *ngIf="pic"><img src="{{pic}}" alt="" class="img-prev"></li>
+            <li class="plus">+</li>
+            <li (click)="presentActionSheet1()" *ngIf="!pic1"><img src="assets/img/no_image_startup.png" alt="" class="img-prev"></li>
+             <li (click)="presentActionSheet1()" *ngIf="pic1"><img src="{{pic1}}" alt="" class="img-prev"></li>
+         </ul> -->
+         <ion-row>
+         <ion-col class="col-img" (click)="presentActionSheet1()" *ngIf="!pic1"><img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev"></ion-col>
+          <ion-col class="col-img" (click)="presentActionSheet1()" *ngIf="pic1"><img src="{{pic1}}" alt=""  class="img-prev"></ion-col>
+
+          <ion-col class="col-img" (click)="presentActionSheet2()" *ngIf="!pic2"><img src="http://18.220.97.146/barber/app_link/img/no_image_startup.png" alt="" class="img-prev"></ion-col>
+ <ion-col class="col-img" (click)="presentActionSheet2()" *ngIf="pic2"><img src="{{pic2}}" alt=""  class="img-prev"></ion-col>
+
+
+           <ion-col class="col-img" (click)="presentActionSheet3()" *ngIf="!pic3"><img src="assets/img/no_image_startup.png" alt="" class="img-prev"></ion-col>
+            <ion-col class="col-img" (click)="presentActionSheet3()" *ngIf="pic3"><img src="{{pic3}}" alt=""  class="img-prev"></ion-col>
+         </ion-row>
+
+
+         <ion-row>
+          <ion-col class="col-img" (click)="presentActionSheet4()" *ngIf="!pic4"><img src="assets/img/no_image_startup.png" alt="" class="img-prev"></ion-col>
+          <ion-col class="col-img" (click)="presentActionSheet4()" *ngIf="pic4"><img src="{{pic4}}" alt=""  class="img-prev">
+          </ion-col>
+
+
+           <ion-col class="col-img" (click)="presentActionSheet5()" *ngIf="!pic5"><img src="assets/img/no_image_startup.png" alt="" class="img-prev"></ion-col>
+            <ion-col class="col-img" (click)="presentActionSheet5()" *ngIf="pic5"><img src="{{pic5}}" alt=""  class="img-prev"></ion-col>
+
+
+            <ion-col class="col-img" ></ion-col>
+         </ion-row>
+         
+
+
+</div>
+
+<ion-list padding>
+  <ion-item class="item-input" no-lines>
+    <ion-input type="text" placeholder="Barber Name"   [(ngModel)]="full_name"></ion-input>
+  </ion-item>
+         
+
+  <ion-item class="item-input" no-lines>
+    <ion-input type="email" placeholder="Email Address"   [(ngModel)]="email"></ion-input>
+  </ion-item>
+     
+      <!--  <ion-item class="item-input" no-lines>
+    <ion-input type="email" placeholder="Paypal Bussiness Account Email Address"   [(ngModel)]="Bussiness_barber_email"></ion-input>
+  </ion-item>   --> 
+
+ <ion-item class="item-input" no-lines>
+    <ion-input type="text" placeholder="My Instagram Link"  [(ngModel)]="inst_link"></ion-input>
+  </ion-item>
+         
+   <ion-item class="item-input" no-lines>
+    <ion-input type="text" placeholder="About me"  [(ngModel)]="about_me"></ion-input>
+  </ion-item>
+  
+  <ion-item no-lines > 
+    <ion-label>Select Services</ion-label>
+    <ion-select [(ngModel)]="service" multiple="true" cancelText="Cancel" okText="Ok">
+    <div *ngFor="let item of items">  
+      <ion-option [value]="item.salon_service" >{{item.salon_service}}</ion-option>
+    </div>
+
+    </ion-select>
+  </ion-item>
+
+<ion-item no-lines>
+  <ion-label>Choose Role & Rights</ion-label>
+  <ion-select [(ngModel)]="Role">
+    <ion-option value="limited">Limited</ion-option>
+    <ion-option value="fullaccess">Full Access</ion-option>
+  </ion-select>
+</ion-item>
+ 
+</ion-list>
+
+<div class="input-div"  >
+ <ion-checkbox color="redcolor"  ng-true-value="'1'" ng-false-value="'0'"  [(ngModel)]="flag"></ion-checkbox><span class="check" >I agree to accept your </span><a class="anchor-terms"><u (click)="terms()">terms & conditions.</u></a></div>
+<button ion-button block color="redcolor"  (click)="salon_reg()">REGISTER</button>
+
+
+</ion-content>
